@@ -3,123 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Send Flowers Online – Beautiful Arrangements for Every Occasion</title>
-<meta name="description" content="Send flowers online with same-day delivery! Choose from realistic, beautiful flower arrangements for holidays, birthdays, and special moments.">
-<meta name="keywords" content="send flowers online, flower delivery, holiday flowers, birthday flowers, same-day flowers, affordable flower arrangements">
-<link rel="icon" href="https://www.floristone.com/favicon.ico" type="image/x-icon">
-
+<title>Send Flowers Online | FloristOne</title>
+<meta name="description" content="Send flowers online for Easter, Mother's Day, Father's Day, and Christmas. Explore beautiful generic flower arrangements and order today!">
+<meta name="keywords" content="send flowers online, flower arrangements, Easter flowers, Mother's Day flowers, Father's Day flowers, Christmas flowers">
+<meta name="robots" content="index, follow">
 <style>
-/* RESET */
-* {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body {background:#fff;color:#333;line-height:1.6;}
-a {text-decoration:none;color:#ff6600;}
-a:hover {color:#cc3300;}
-img {max-width:100%;height:auto;display:block;}
+/* ---------- RESET ---------- */
+* {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
+body {background:#fff; color:#222; line-height:1.6; overflow-x:hidden;}
 
-/* TOP BAR */
-.top-bar {background:#ff6600;color:#fff;padding:10px;text-align:center;font-weight:bold;cursor:pointer;transition:all 0.3s ease;}
-.top-bar:hover {background:#cc3300;transform:scale(1.02);}
+/* ---------- TOP BAR / COUNTDOWN ---------- */
+.top-bar {
+  width:100%; background:#ff7f00; color:#fff; text-align:center; font-weight:bold; padding:12px 0; cursor:pointer; transition:0.3s;
+  position:fixed; top:0; left:0; z-index:9999;
+}
+.top-bar:hover { background:#b90409 !important; transform:scale(1.02); }
 
-/* HERO */
-.hero {position:relative;text-align:center;padding:80px 20px;background:#f8f2f5;}
-.hero h1 {font-size:3em;color:#4b0082;margin-bottom:20px;cursor:pointer;}
-.hero h2 {font-size:1.5em;color:#800080;margin-bottom:30px;cursor:pointer;}
-.hero a.button {background:#ff6600;color:#fff;padding:15px 30px;font-size:1.2em;border-radius:5px;display:inline-block;transition:all 0.3s ease;}
-.hero a.button:hover {background:#cc3300;}
+/* ---------- HERO ---------- */
+.hero {
+  background: url('https://www.floristone.com/images/hero_generic.jpg') no-repeat center center/cover;
+  height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding-top:50px;
+}
+.hero h1 {font-size:4em; color:#ff9c00; margin-bottom:10px; cursor:pointer; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);}
+.hero h2 {font-size:2em; color:#ffe0b3; margin-bottom:20px; cursor:pointer; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);}
+.hero a.cta {padding:15px 40px; background:#ff7f00; color:#fff; text-decoration:none; font-size:1.2em; border-radius:8px; transition:0.3s;}
+.hero a.cta:hover {background:#b90409;}
 
-/* SECTIONS */
-.section {padding:60px 20px;text-align:center;}
-.section h3 {font-size:2em;margin-bottom:30px;color:#4b0082;}
+/* ---------- FLOWER SECTIONS ---------- */
+.section {padding:80px 5%; max-width:1200px; margin:auto;}
+.section h3 {font-size:2.2em; margin-bottom:30px; color:#ff7f00; text-align:center;}
+.flower-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:25px;}
+.flower-card {background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s;}
+.flower-card img {width:100%; display:block;}
+.flower-card a {display:block; text-decoration:none; color:#222; font-weight:bold; padding:10px; text-align:center;}
+.flower-card a:hover {color:#ff7f00;}
 
-/* PRODUCTS GRID */
-.products {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.product-card {border:1px solid #eee;border-radius:8px;padding:15px;transition:transform 0.3s ease;}
-.product-card:hover {transform:translateY(-5px);}
-.product-card img {border-radius:5px;margin-bottom:10px;}
-.product-card h4 {font-size:1.2em;margin-bottom:5px;color:#4b0082;}
-.product-card p {font-size:0.95em;color:#555;margin-bottom:10px;}
-.product-card a.button {display:block;background:#ff6600;color:#fff;padding:10px;border-radius:5px;transition:all 0.3s ease;}
-.product-card a.button:hover {background:#cc3300;}
+/* ---------- EXIT POPUP ---------- */
+.exit-popup {display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:400px; background:#fff3e0; border:3px solid #ff7f00; padding:30px; z-index:10000; border-radius:15px; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.3);}
+.exit-popup h2 {color:#ff7f00; margin-bottom:15px;}
+.exit-popup p {margin-bottom:20px;}
+.exit-popup a {display:inline-block; padding:12px 30px; background:#ff7f00; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold;}
+.exit-popup a:hover {background:#b90409;}
 
-/* FAQ */
-.faq {max-width:900px;margin:0 auto;text-align:left;}
-.faq h4 {cursor:pointer;background:#f0f0f0;padding:10px;border-radius:5px;margin-top:10px;}
-.faq p {padding:10px 15px;display:none;background:#fafafa;border-left:3px solid #ff6600;}
+/* ---------- FAQ ---------- */
+.faq {background:#fffbe6; padding:60px 5%;}
+.faq h3 {text-align:center; color:#ff7f00; margin-bottom:40px;}
+.faq-item {margin-bottom:25px;}
+.faq-item h4 {cursor:pointer; color:#222; font-weight:bold;}
+.faq-item p {margin-top:8px; display:none; color:#333;}
 
-/* POPUP */
-.popup {position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:30px;border-radius:10px;box-shadow:0 5px 25px rgba(0,0,0,0.3);display:none;z-index:1000;width:300px;text-align:center;}
-.popup h3 {margin-bottom:15px;color:#4b0082;}
-.popup a.button {display:inline-block;margin-top:10px;}
-
-/* OVERLAY */
-.overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:none;z-index:999;}
+/* ---------- FOOTER ---------- */
+footer {background:#ff7f00; color:#fff; text-align:center; padding:25px;}
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- TOP BAR / RUNNING COUNTDOWN -->
 <div class="top-bar" id="top-bar">LOADING COUNTDOWN...</div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <h1 onclick="window.location.href='https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799'">Send Flowers Online</h1>
-  <h2 onclick="window.location.href='https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799'">Beautiful, Realistic Arrangements for Every Occasion</h2>
-  <a class="button" href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">Shop Now</a>
+<h1 onclick="window.location.href='https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799'">Send Flowers Online</h1>
+<h2 onclick="window.location.href='https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799'">Beautiful Generic Flower Arrangements for Every Occasion</h2>
+<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="cta">Order Now</a>
 </section>
 
-<!-- PRODUCTS -->
+<!-- FLOWER SECTION -->
 <section class="section">
-  <h3>Featured Flower Arrangements</h3>
-  <div class="products">
-    <div class="product-card">
-      <img src="https://www.floristone.com/images/product1.jpg" alt="Generic Flower Arrangement 1">
-      <h4>Spring Celebration</h4>
-      <p>Bright, cheerful flowers perfect for any spring occasion.</p>
-      <a class="button" href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">View Arrangement</a>
-    </div>
-    <div class="product-card">
-      <img src="https://www.floristone.com/images/product2.jpg" alt="Generic Flower Arrangement 2">
-      <h4>Holiday Cheer</h4>
-      <p>Festive flowers to brighten up your holiday celebrations.</p>
-      <a class="button" href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">View Arrangement</a>
-    </div>
-    <div class="product-card">
-      <img src="https://www.floristone.com/images/product3.jpg" alt="Generic Flower Arrangement 3">
-      <h4>Birthday Surprise</h4>
-      <p>Make birthdays extra special with colorful blooms.</p>
-      <a class="button" href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">View Arrangement</a>
-    </div>
-    <div class="product-card">
-      <img src="https://www.floristone.com/images/product4.jpg" alt="Generic Flower Arrangement 4">
-      <h4>Thinking of You</h4>
-      <p>Send love and care with thoughtful arrangements.</p>
-      <a class="button" href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">View Arrangement</a>
-    </div>
+<h3>Our Generic Flower Arrangements</h3>
+<div class="flower-grid">
+  <div class="flower-card">
+    <img src="https://www.floristone.com/images/flower1.jpg" alt="Flower Arrangement 1">
+    <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">View & Order</a>
   </div>
+  <div class="flower-card">
+    <img src="https://www.floristone.com/images/flower2.jpg" alt="Flower Arrangement 2">
+    <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">View & Order</a>
+  </div>
+  <div class="flower-card">
+    <img src="https://www.floristone.com/images/flower3.jpg" alt="Flower Arrangement 3">
+    <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">View & Order</a>
+  </div>
+  <div class="flower-card">
+    <img src="https://www.floristone.com/images/flower4.jpg" alt="Flower Arrangement 4">
+    <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">View & Order</a>
+  </div>
+</div>
 </section>
 
 <!-- FAQ -->
-<section class="section faq">
-  <h3>Frequently Asked Questions</h3>
-  <!-- Example FAQ 1 -->
-  <h4>How do I send flowers online?</h4>
-  <p>Simply click on any arrangement and follow the checkout steps. Our site will ensure delivery directly to your recipient.</p>
-  <!-- Example FAQ 2 -->
-  <h4>Can I choose the delivery date?</h4>
-  <p>Yes! You can select the delivery date during checkout for most arrangements.</p>
-  <!-- Repeat 50+ FAQs similarly with unique answers -->
+<section class="faq">
+<h3>Frequently Asked Questions</h3>
+<div class="faq-item">
+<h4>How do I order flowers online?</h4>
+<p>Click on any flower arrangement and you’ll be taken to our affiliate checkout page to complete your order quickly and safely.</p>
+</div>
+<div class="faq-item">
+<h4>Do you offer same-day delivery?</h4>
+<p>Yes, for most holidays and locations. Check the countdown at the top for next holiday deadlines.</p>
+</div>
+<div class="faq-item">
+<h4>Are these generic arrangements or custom bouquets?</h4>
+<p>All arrangements on this page are generic flower arrangements. Custom bouquets are available on a separate page.</p>
+</div>
+<!-- Add remaining 50+ FAQ items similarly -->
 </section>
 
-<!-- POPUP -->
-<div class="overlay" id="overlay"></div>
-<div class="popup" id="popup">
-  <h3>Wait! Don’t Miss Out</h3>
-  <p>Order now to guarantee same-day delivery on select arrangements.</p>
-  <a class="button" href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">Shop Now</a>
+<!-- EXIT POPUP -->
+<div class="exit-popup" id="exit-popup">
+<h2>Wait! Don't Miss Out!</h2>
+<p>Order your flowers now for the next big holiday. Limited same-day delivery slots available.</p>
+<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">Order Now</a>
 </div>
 
+<!-- FOOTER -->
+<footer>
+<p>&copy; 2026 Send Flowers Online. All rights reserved.</p>
+</footer>
+
+<!-- RUNNING COUNTDOWN JS -->
 <script>
-// Top Bar Running Countdown
 document.addEventListener('DOMContentLoaded', function() {
   const holidays = [
     {name: 'Easter', date: new Date('2026-04-05T00:00:00').getTime()},
@@ -133,41 +136,66 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextHoliday = holidays.find(h => h.date > now) || holidays[0];
     const timeLeft = nextHoliday.date - now;
     const days = Math.floor(timeLeft / (1000*60*60*24));
-    const hours = Math.floor((timeLeft % (1000*60*60*24))/(1000*60*60));
-    const mins = Math.floor((timeLeft % (1000*60*60))/(1000*60));
+    const hours = Math.floor((timeLeft % (1000*60*60*24)) / (1000*60*60));
+    const mins = Math.floor((timeLeft % (1000*60*60)) / (1000*60));
     topBar.textContent = `NEXT: ${nextHoliday.name} (${days}d ${hours}h ${mins}m)`;
   };
   updateClock();
-  setInterval(updateClock,60000);
-  topBar.addEventListener('click',()=>{document.getElementById('hero').scrollIntoView({behavior:'smooth'});});
+  setInterval(updateClock, 60000);
+  topBar.onclick = () => { document.getElementById('hero').scrollIntoView({behavior:'smooth'}); };
 });
-
-// FAQ Toggle
-document.querySelectorAll('.faq h4').forEach(item=>{
-  item.addEventListener('click',()=>{let p=item.nextElementSibling;p.style.display=p.style.display==='block'?'none':'block';});
-});
-
-// Exit Popup Trigger
-let popupShown=false;
-window.addEventListener('mouseout',e=>{
-  if(e.clientY<10 && !popupShown){document.getElementById('overlay').style.display='block';document.getElementById('popup').style.display='block';popupShown=true;}
-});
-document.getElementById('overlay').addEventListener('click',()=>{document.getElementById('overlay').style.display='none';document.getElementById('popup').style.display='none';});
 </script>
 
-<!-- JSON-LD for SEO (example for 4 products and 50 FAQs, expand as needed) -->
+<!-- EXIT POPUP JS -->
+<script>
+document.addEventListener('mouseout', function(e){
+  if(!e.toElement && !e.relatedTarget){
+    document.getElementById('exit-popup').style.display='block';
+  }
+});
+</script>
+
+<!-- FAQ Toggle JS -->
+<script>
+document.querySelectorAll('.faq-item h4').forEach(item=>{
+  item.addEventListener('click', ()=> {
+    const p = item.nextElementSibling;
+    p.style.display = (p.style.display==='block') ? 'none' : 'block';
+  });
+});
+</script>
+
+<!-- JSON-LD Product + FAQ Schema -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebPage",
-  "name":"Send Flowers Online",
-  "url":"https://brightlane.github.io/SendFlowersOnline/",
-  "mainEntity":[
-    {"@type":"Product","name":"Spring Celebration","image":"https://www.floristone.com/images/product1.jpg","description":"Bright, cheerful flowers perfect for any spring occasion.","offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
-    {"@type":"Product","name":"Holiday Cheer","image":"https://www.floristone.com/images/product2.jpg","description":"Festive flowers to brighten up your holiday celebrations.","offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
-    {"@type":"Product","name":"Birthday Surprise","image":"https://www.floristone.com/images/product3.jpg","description":"Make birthdays extra special with colorful blooms.","offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
-    {"@type":"Product","name":"Thinking of You","image":"https://www.floristone.com/images/product4.jpg","description":"Send love and care with thoughtful arrangements.","offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","priceCurrency":"USD","availability":"https://schema.org/InStock"}}
-  ]
+"@context":"https://schema.org",
+"@type":"WebPage",
+"name":"Send Flowers Online",
+"url":"https://brightlane.github.io/SendFlowersOnline/#",
+"description":"Send flowers online for Easter, Mother's Day, Father's Day, and Christmas. Generic flower arrangements for every occasion.",
+"mainEntity":[
+{
+  "@type":"Product",
+  "name":"Flower Arrangement 1",
+  "image":"https://www.floristone.com/images/flower1.jpg",
+  "description":"Generic flower arrangement 1 for every occasion",
+  "offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","priceCurrency":"USD","price":"49.99","availability":"https://schema.org/InStock"}
+},
+{
+  "@type":"Product",
+  "name":"Flower Arrangement 2",
+  "image":"https://www.floristone.com/images/flower2.jpg",
+  "description":"Generic flower arrangement 2 for every occasion",
+  "offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","priceCurrency":"USD","price":"59.99","availability":"https://schema.org/InStock"}
+}
+/* Add remaining 20+ products similarly */
+],
+"faq":[
+{"@type":"Question","name":"How do I order flowers online?","acceptedAnswer":{"@type":"Answer","text":"Click on any flower arrangement and you’ll be taken to our affiliate checkout page to complete your order quickly and safely."}},
+{"@type":"Question","name":"Do you offer same-day delivery?","acceptedAnswer":{"@type":"Answer","text":"Yes, for most holidays and locations. Check the countdown at the top for next holiday deadlines."}},
+{"@type":"Question","name":"Are these generic arrangements or custom bouquets?","acceptedAnswer":{"@type":"Answer","text":"All arrangements on this page are generic flower arrangements. Custom bouquets are available on a separate page."}}
+/* Add remaining 50+ FAQ items similarly */
+]
 }
 </script>
 
