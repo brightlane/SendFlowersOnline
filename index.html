@@ -1,35 +1,82 @@
-<!-- Exit-intent urgency popup with dynamic urgency -->
-<div id="exit-popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,0.7);color:#fff;display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:20px;z-index:9999;">
-  <div style="background:#fff;color:#004b98;padding:30px;border-radius:16px;max-width:400px;">
-    <h2 style="margin-bottom:16px;">Wait! Don’t leave yet!</h2>
-    <p style="margin-bottom:16px;">Hurry! Only <span id="bouquets-left">12</span> bouquets left for today. Fast delivery guaranteed!</p>
-    <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" 
-       style="display:inline-block;background:#e20613;color:#fff;padding:12px 28px;border-radius:24px;font-weight:700;text-decoration:none;">
-      Send Flowers Now
-    </a>
-  </div>
-</div>
-
 <script>
-  let exitPopupShown = false;
+// Dynamic Exit Popup
+const scenarios = [
+  "birthday",
+  "get-well",
+  "anniversary",
+  "funeral",
+  "Mother’s Day",
+  "Valentine’s Day",
+  "Christmas",
+  "Easter"
+];
 
-  // Randomize remaining bouquets for urgency
-  function randomBouquets() {
-    return Math.floor(Math.random() * 10) + 5; // random 5–14
-  }
+document.addEventListener('mouseout', function(e){
+  if(e.clientY < 10){
+    if(!document.getElementById('exit-popup')){
+      // Pick a random scenario
+      let scenario = scenarios[Math.floor(Math.random() * scenarios.length)];
 
-  document.addEventListener('mouseout', function(e) {
-    if (!exitPopupShown && e.clientY < 50) {
-      document.getElementById('bouquets-left').textContent = randomBouquets();
-      document.getElementById('exit-popup').style.display = 'flex';
-      exitPopupShown = true;
+      let popup = document.createElement('div');
+      popup.id = 'exit-popup';
+      popup.style.position='fixed';
+      popup.style.top='0';
+      popup.style.left='0';
+      popup.style.width='100%';
+      popup.style.height='100%';
+      popup.style.background='rgba(0,0,0,0.6)';
+      popup.style.display='flex';
+      popup.style.alignItems='center';
+      popup.style.justifyContent='center';
+      popup.style.zIndex='9999';
+
+      popup.innerHTML = `
+        <div style="
+          max-width:600px;
+          padding:36px;
+          border-radius:16px;
+          background: linear-gradient(135deg, #004b98 0%, #e20613 100%);
+          color:#fff;
+          text-align:center;
+          font-family: system-ui, sans-serif;
+          box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+          animation: popupFadeIn 0.4s ease;
+        ">
+          <h2 style="margin-bottom:16px;font-size:1.5rem;">Wait! Don’t Leave Yet!</h2>
+          <p style="margin-bottom:24px;font-size:1rem;line-height:1.4;">
+            Send ${scenario} flowers online now before it’s too late! Fast delivery available to Canada & USA.
+          </p>
+          <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank" rel="noopener" style="
+            display:inline-block;
+            padding:14px 32px;
+            border-radius:32px;
+            background:#fff;
+            color:#004b98;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:0.05em;
+            font-size:1rem;
+            transition: all 0.3s ease;
+          " onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">Order Flowers Now</a>
+        </div>
+      `;
+
+      document.body.appendChild(popup);
+
+      // Close popup on click outside
+      popup.addEventListener('click', function(e){
+        if(e.target === popup) popup.remove();
+      });
     }
-  });
+  }
+});
 
-  // Close popup if clicking outside the inner box
-  document.getElementById('exit-popup').addEventListener('click', function(e){
-    if(e.target.id === 'exit-popup') this.style.display='none';
-  });
+// Simple fade-in animation
+let style = document.createElement('style');
+style.innerHTML = `
+@keyframes popupFadeIn {
+  from {opacity:0; transform: scale(0.9);}
+  to {opacity:1; transform: scale(1);}
+}`;
+document.head.appendChild(style);
 </script>
