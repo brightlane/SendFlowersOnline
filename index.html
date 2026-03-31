@@ -3,151 +3,228 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Send Flowers Online – BrightLane</title>
-<meta name="description" content="Send flowers online today! Roses, tulips, lilies, orchids, sunflowers & gift add-ons. Same-day delivery available.">
+<title>Send Flowers Online – Fresh Bouquets & Gifts</title>
+<meta name="description" content="Send flowers online with same-day delivery! Choose from roses, orchids, sunflowers, carnations, and more. Perfect for every holiday and occasion.">
+<meta name="keywords" content="send flowers online, same day flowers, roses, orchids, sunflowers, carnations, flower delivery, holiday bouquets">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 <style>
-  body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#fff; color:#333; }
-  .container { width:90%; max-width:1200px; margin:auto; }
-  h1, h2, h3, h4 { margin:10px 0; }
-  a { color:#ff9500; text-decoration:none; cursor:pointer; }
-  .hero { display:flex; align-items:center; justify-content:center; height:600px; text-align:center; background-size:cover; background-position:center; position:relative; }
-  .hero h1 { font-size:3rem; color:#ff9500; cursor:pointer; }
-  .hero p { font-size:1.5rem; color:#ffd1b3; cursor:pointer; }
-  .mega-cta { display:inline-block; padding:15px 30px; background:#ff9500; color:#fff; font-weight:bold; border-radius:8px; margin-top:20px; cursor:pointer; transition:0.3s; }
-  .mega-cta:hover { background:#e68300; }
+  /* General Reset */
+  * {margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
+  body {background:#fef9f4; color:#333;}
+  a {text-decoration:none; color:inherit;}
+  
+  /* Hero Section */
+  .hero {background:url('https://images.unsplash.com/photo-1602524811084-63b1f5465f5c?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat; text-align:center; padding:120px 20px; position:relative; color:#fff;}
+  .hero h1 {font-size:3rem; margin-bottom:10px; color:#ffcc00;}
+  .hero h2 {font-size:1.5rem; margin-bottom:20px; color:#ffdd66;}
+  .hero a.cta {display:inline-block; padding:15px 35px; background:#ff6600; color:#fff; font-weight:bold; border-radius:6px; transition:0.3s;}
+  .hero a.cta:hover {background:#e65c00;}
 
-  /* Products */
-  #products { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; margin:50px 0; }
-  .product-card { border:1px solid #ddd; border-radius:12px; overflow:hidden; text-align:center; background:#fff; transition:0.3s; }
-  .product-card:hover { box-shadow:0 10px 25px rgba(0,0,0,0.2); }
-  .product-card img { width:100%; height:300px; object-fit:cover; }
-  .product-card h3 { font-size:1.2rem; margin:10px 0; }
-  .product-card p { font-size:1rem; color:#555; margin:0 10px 10px; }
-
+  /* Running Holiday Clock */
+  .countdown {background:#fffae6; padding:15px; text-align:center; font-size:1.2rem; margin-top:20px; border-radius:6px;}
+  .countdown span {font-weight:bold; color:#ff6600;}
+  .countdown a {color:#ff6600; font-weight:bold;}
+  
+  /* Product Section */
+  .products {padding:60px 20px; max-width:1200px; margin:0 auto;}
+  .products h3 {font-size:2rem; margin-bottom:40px; text-align:center; color:#663399;}
+  .product-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px;}
+  .product {background:#fff; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow:hidden; text-align:center; padding-bottom:20px;}
+  .product img {width:100%; height:200px; object-fit:cover;}
+  .product h4 {margin:15px 0 5px; color:#663399;}
+  .product p {margin:0 10px 10px; font-size:0.95rem;}
+  .product .price {font-weight:bold; color:#ff6600; font-size:1.1rem; margin-bottom:10px;}
+  .product a.buy {display:inline-block; padding:10px 20px; background:#ff6600; color:#fff; border-radius:6px; font-weight:bold; transition:0.3s;}
+  .product a.buy:hover {background:#e65c00;}
+  
+  /* Comparison Section */
+  .comparison {background:#fff0f5; padding:60px 20px;}
+  .comparison h3 {text-align:center; font-size:2rem; margin-bottom:40px; color:#663399;}
+  .comparison ul {list-style:none; max-width:800px; margin:0 auto; padding:0;}
+  .comparison li {background:#fff; padding:15px 20px; margin-bottom:15px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+  
+  /* FAQ Section */
+  .faq {padding:60px 20px; max-width:1000px; margin:0 auto;}
+  .faq h3 {text-align:center; font-size:2rem; margin-bottom:40px; color:#663399;}
+  .faq-item {margin-bottom:15px; background:#fff; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.05);}
+  .faq-question {padding:15px; font-weight:bold; cursor:pointer; position:relative;}
+  .faq-question::after {content:'+'; position:absolute; right:20px; font-size:1.2rem;}
+  .faq-question.active::after {content:'-';}
+  .faq-answer {display:none; padding:0 15px 15px;}
+  
   /* Exit Popup */
-  .exit-popup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:999; }
-  .popup-content { background:#fff; padding:30px; border-radius:12px; max-width:400px; text-align:center; position:relative; }
-  .popup-close { position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; }
-  .popup-cta { margin-top:20px; padding:12px 25px; background:#ff9500; color:#fff; font-weight:bold; border-radius:8px; cursor:pointer; display:inline-block; transition:0.3s; }
-  .popup-cta:hover { background:#e68300; }
-
-  /* FAQ Accordion */
-  .faq { margin:50px 0; }
-  .faq-item { border-bottom:1px solid #ddd; padding:15px 0; }
-  .faq-item h4 { cursor:pointer; margin:0; color:#ff9500; }
-  .faq-item p { display:none; margin:5px 0 0 0; color:#555; }
-
+  #exitPopup {position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#fff; padding:40px; z-index:9999; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.3); display:none; max-width:400px; text-align:center;}
+  #exitPopup h4 {font-size:1.5rem; margin-bottom:15px; color:#ff6600;}
+  #exitPopup p {margin-bottom:20px;}
+  #exitPopup a {padding:10px 25px; background:#ff6600; color:#fff; border-radius:6px; font-weight:bold; display:inline-block;}
+  
+  /* Responsive */
+  @media(max-width:768px){.hero h1{font-size:2rem}.hero h2{font-size:1.1rem}.product img{height:180px;}}
 </style>
 </head>
 <body>
 
-<!-- Hero Section -->
-<section class="hero" id="hero" style="background:#ffe6e6 url('https://brightlane.github.io/FtdFlowers/images/hero-bouquet.jpg') center/cover no-repeat;">
-  <div class="container">
-    <h1 onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Send Flowers Online – Same-Day Delivery</h1>
-    <p onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Roses, Tulips, Lilies, Orchids, Sunflowers & more. Gift add-ons available.</p>
-    <div class="mega-cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Order Flowers Now →</div>
+<!-- Hero -->
+<section class="hero">
+  <h1><a href="#products">Send Flowers Online</a></h1>
+  <h2><a href="#products">Fresh Bouquets for Every Occasion</a></h2>
+  <a href="#products" class="cta">Shop Now</a>
+  
+  <!-- Running Holiday Countdown -->
+  <div class="countdown">
+    Next Holiday: <span id="holidayName">Valentine's Day</span> – Order within <span id="timeRemaining">12h 34m</span> for same-day delivery! 
+    <a href="#products">View Products</a>
   </div>
 </section>
 
-<!-- Products Section -->
-<section id="products" class="container">
-  <!-- Example Product -->
-  <div class="product-card">
-    <img src="https://brightlane.github.io/FtdFlowers/images/roses.jpg" alt="Red Roses Bouquet">
-    <h3>Red Roses Bouquet</h3>
-    <p>Deep red roses symbolizing love and passion. 12 stems.</p>
+<!-- Products -->
+<section class="products" id="products">
+  <h3>Our Best-Selling Bouquets</h3>
+  <div class="product-grid">
+    <!-- Sample Product -->
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1602524811084-63b1f5465f5c?auto=format&fit=crop&w=400&q=80" alt="Red Roses Bouquet">
+      <h4>Red Roses Bouquet</h4>
+      <p>Classic red roses arranged for love and romance.</p>
+      <div class="price">$49.99</div>
+      <a href="#" class="buy">Buy Now</a>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1617196032287-f512dcf7bc03?auto=format&fit=crop&w=400&q=80" alt="Orchid Elegance">
+      <h4>Orchid Elegance</h4>
+      <p>Delicate orchids for a touch of luxury.</p>
+      <div class="price">$59.99</div>
+      <a href="#" class="buy">Buy Now</a>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80" alt="Sunflower Surprise">
+      <h4>Sunflower Surprise</h4>
+      <p>Bright and cheerful sunflowers to lift spirits.</p>
+      <div class="price">$39.99</div>
+      <a href="#" class="buy">Buy Now</a>
+    </div>
+    <!-- Add 17+ more products similarly -->
   </div>
-  <div class="product-card">
-    <img src="https://brightlane.github.io/FtdFlowers/images/tulips.jpg" alt="Mixed Tulips">
-    <h3>Mixed Tulips Bouquet</h3>
-    <p>Bright and cheerful tulips for every occasion. 15 stems.</p>
+</section>
+
+<!-- Comparison Section -->
+<section class="comparison">
+  <h3>Compare Our Bouquets</h3>
+  <ul>
+    <li>Red Roses – Classic romantic bouquet</li>
+    <li>Orchid Elegance – Premium exotic arrangement</li>
+    <li>Sunflower Surprise – Cheerful & bright</li>
+    <li>Carnation Mix – Budget-friendly favorite</li>
+    <li>Lily Luxury – Elegant & fragrant</li>
+  </ul>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq">
+  <h3>Frequently Asked Questions</h3>
+  <!-- Sample FAQ -->
+  <div class="faq-item">
+    <div class="faq-question">How do I order flowers online?</div>
+    <div class="faq-answer">Simply browse our bouquets, select your favorite, choose a delivery date, and checkout. It’s that easy!</div>
   </div>
-  <div class="product-card">
-    <img src="https://brightlane.github.io/FtdFlowers/images/lilies.jpg" alt="White Lilies">
-    <h3>White Lilies Bouquet</h3>
-    <p>Elegant white lilies to celebrate purity and grace. 10 stems.</p>
+  <div class="faq-item">
+    <div class="faq-question">Do you offer same-day delivery?</div>
+    <div class="faq-answer">Yes! Order before our cutoff time and your flowers can be delivered the same day.</div>
   </div>
-  <!-- Add remaining 17+ products & 5 add-ons here in same structure -->
+  <div class="faq-item">
+    <div class="faq-question">Can I include a personalized message?</div>
+    <div class="faq-answer">Absolutely! Every bouquet includes a free personalized card. Add your message during checkout.</div>
+  </div>
+  <!-- Add 47+ more FAQs similarly -->
 </section>
 
 <!-- Exit Popup -->
-<div class="exit-popup" id="exitPopup">
-  <div class="popup-content">
-    <span class="popup-close" onclick="document.getElementById('exitPopup').style.display='none'">&times;</span>
-    <h2>Wait! Don’t Miss Same-Day Delivery</h2>
-    <p>Order in the next 2 hours and get a free gift add-on with your bouquet!</p>
-    <div class="popup-cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Order Now →</div>
-  </div>
+<div id="exitPopup">
+  <h4>Wait! Special Offer!</h4>
+  <p>Order now and get 10% off your bouquet. Don’t miss our same-day delivery cutoff!</p>
+  <a href="#products">Claim Offer</a>
 </div>
 
-<!-- FAQ Section -->
-<section class="faq container">
-  <h2>Frequently Asked Questions</h2>
-  <!-- Example FAQ Item -->
-  <div class="faq-item">
-    <h4>Do you offer same-day flower delivery?</h4>
-    <p>Yes! Order before 2 PM and we deliver same-day in most cities.</p>
-  </div>
-  <div class="faq-item">
-    <h4>Can I include a gift add-on?</h4>
-    <p>Absolutely! Choose from chocolates, teddy bears, balloons, and more.</p>
-  </div>
-  <!-- Add remaining 48+ FAQ items in same structure -->
-</section>
-
 <script>
-  // Exit popup trigger
-  document.addEventListener('mouseleave', function(e){
-    if(e.clientY < 0){
-      document.getElementById('exitPopup').style.display='flex';
-    }
+  // Countdown logic (placeholder for multiple holidays)
+  let holidayNames = ["Valentine's Day","Mother's Day","Christmas","Anniversary"];
+  let holidayIndex = 0;
+  setInterval(() => {
+    holidayIndex = (holidayIndex + 1) % holidayNames.length;
+    document.getElementById('holidayName').textContent = holidayNames[holidayIndex];
+    document.getElementById('timeRemaining').textContent = Math.floor(Math.random()*12+1)+'h '+Math.floor(Math.random()*59+1)+'m';
+  }, 10000);
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      q.classList.toggle('active');
+      let a = q.nextElementSibling;
+      a.style.display = a.style.display==='block' ? 'none' : 'block';
+    });
   });
 
-  // FAQ accordion toggle
-  document.querySelectorAll('.faq-item h4').forEach(faq=>{
-    faq.addEventListener('click', function(){
-      const p = this.nextElementSibling;
-      p.style.display = (p.style.display==='block') ? 'none' : 'block';
-    });
+  // Exit popup
+  document.addEventListener('mouseout', function(e){
+    if(e.clientY < 10){document.getElementById('exitPopup').style.display='block';}
   });
 </script>
 
-<!-- JSON-LD Product Schema -->
+<!-- JSON-LD for Products (example for 3) -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org/",
-  "@type": "ItemList",
-  "itemListElement": [
-    {
-      "@type": "Product",
-      "name": "Red Roses Bouquet",
-      "image": "https://brightlane.github.io/FtdFlowers/images/roses.jpg",
-      "description": "Deep red roses symbolizing love and passion. 12 stems.",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://brightlane.github.io/FtdFlowers/#products",
-        "priceCurrency": "USD",
-        "price": "49.99",
-        "availability": "https://schema.org/InStock"
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Mixed Tulips Bouquet",
-      "image": "https://brightlane.github.io/FtdFlowers/images/tulips.jpg",
-      "description": "Bright and cheerful tulips for every occasion. 15 stems.",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://brightlane.github.io/FtdFlowers/#products",
-        "priceCurrency": "USD",
-        "price": "39.99",
-        "availability": "https://schema.org/InStock"
-      }
-    }
-    /* Add remaining 18+ products and 5 add-ons here */
-  ]
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Red Roses Bouquet",
+  "image": "https://images.unsplash.com/photo-1602524811084-63b1f5465f5c?auto=format&fit=crop&w=400&q=80",
+  "description": "Classic red roses arranged for love and romance.",
+  "sku": "RDB001",
+  "brand": {"@type":"Brand","name":"BrightLane Flowers"},
+  "offers": {
+    "@type": "Offer",
+    "url": "https://brightlane.github.io/SendFlowersOnline/",
+    "priceCurrency": "USD",
+    "price": "49.99",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Orchid Elegance",
+  "image": "https://images.unsplash.com/photo-1617196032287-f512dcf7bc03?auto=format&fit=crop&w=400&q=80",
+  "description": "Delicate orchids for a touch of luxury.",
+  "sku": "ORC002",
+  "brand": {"@type":"Brand","name":"BrightLane Flowers"},
+  "offers": {
+    "@type": "Offer",
+    "url": "https://brightlane.github.io/SendFlowersOnline/",
+    "priceCurrency": "USD",
+    "price": "59.99",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Sunflower Surprise",
+  "image": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80",
+  "description": "Bright and cheerful sunflowers to lift spirits.",
+  "sku": "SUN003",
+  "brand": {"@type":"Brand","name":"BrightLane Flowers"},
+  "offers": {
+    "@type": "Offer",
+    "url": "https://brightlane.github.io/SendFlowersOnline/",
+    "priceCurrency": "USD",
+    "price": "39.99",
+    "availability": "https://schema.org/InStock"
+  }
 }
 </script>
 
