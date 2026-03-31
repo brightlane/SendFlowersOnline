@@ -5,22 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Send Flowers Online – Same Day Delivery Canada & USA</title>
-
-<meta name="description" content="Send flowers online fast. Same-day delivery across Canada & USA. Roses, tulips, lilies, orchids & more via FloristOne.">
+<meta name="description" content="Send flowers online instantly. Same-day delivery roses, tulips, lilies, orchids across Canada & USA. Order now before cutoff.">
 <link rel="canonical" href="https://brightlane.github.io/MothersDayFlowers/">
 
 <style>
 :root{
 --primary:#b90409;
---secondary:#ff4d4d;
---dark:#111;
---light:#fff;
 --gradient:linear-gradient(135deg,#ff4d4d,#b90409);
 }
 
 body{
 margin:0;
-font-family:Arial,sans-serif;
+font-family:system-ui,-apple-system,Arial;
 background:#fafafa;
 color:#333;
 }
@@ -42,46 +38,97 @@ transition:.3s;
 
 /* HERO */
 .hero{
-background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
-url('https://images.unsplash.com/photo-1490750967868-88aa4486c946');
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1526045612212-70caf35c14df');
 background-size:cover;
+background-position:center;
 color:#fff;
 text-align:center;
-padding:100px 20px;
+padding:120px 20px;
 }
+
 .hero h1{
-font-size:2rem;
-max-width:700px;
+font-size:2.6rem;
+max-width:800px;
 margin:auto;
+font-weight:800;
 }
-.hero p{max-width:600px;margin:15px auto;}
+
+.hero p{
+max-width:600px;
+margin:15px auto;
+font-size:1.2rem;
+}
+
+.badge{
+display:inline-block;
+background:#fff;
+color:#b90409;
+padding:6px 14px;
+border-radius:20px;
+font-weight:700;
+margin-bottom:15px;
+}
 
 .cta{
 display:inline-block;
 margin-top:20px;
-padding:14px 30px;
+padding:16px 36px;
 background:var(--gradient);
 color:#fff;
-border-radius:30px;
-font-weight:700;
-box-shadow:0 6px 20px rgba(0,0,0,.3);
+border-radius:40px;
+font-size:1.2rem;
+font-weight:800;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-/* CARDS */
+/* TRUST */
+.trust{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:30px;
+font-weight:600;
+flex-wrap:wrap;
+}
+
+/* PRODUCTS */
+.products{
+padding:50px 20px;
+text-align:center;
+}
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:40px;
+gap:25px;
+max-width:1100px;
+margin:auto;
 }
 .card{
 background:#fff;
-padding:20px;
 border-radius:14px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,.1);
 transition:.3s;
 }
-.card:hover{transform:translateY(-5px);}
+.card:hover{transform:translateY(-6px);}
+.card img{width:100%;height:220px;object-fit:cover;}
+.card h3{margin:10px;}
+.card a{
+display:block;
+padding:12px;
+background:var(--gradient);
+color:#fff;
+font-weight:700;
+}
+
+/* URGENCY */
+.urgency{
+background:#111;
+color:#fff;
+text-align:center;
+padding:40px 20px;
+}
 
 /* FAQ */
 .faq{
@@ -93,7 +140,7 @@ padding:40px 20px;
 background:#fff;
 padding:15px;
 margin-bottom:10px;
-border-radius:8px;
+border-radius:10px;
 box-shadow:0 2px 6px rgba(0,0,0,.1);
 }
 
@@ -104,114 +151,127 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.8);
+background:rgba(0,0,0,.85);
 display:none;
-align-items:center;
 justify-content:center;
+align-items:center;
 z-index:9999;
 }
-.popup-box{
+.popup{
 background:#fff;
 padding:30px;
-border-radius:12px;
+border-radius:14px;
 text-align:center;
-max-width:400px;
+max-width:420px;
 }
-.popup-box h2{color:var(--primary);}
 </style>
-
 </head>
+
 <body>
 
+<!-- TOP BAR -->
 <div class="top-bar" id="top-bar">
 LOADING COUNTDOWN...
 </div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">
-<h1>Send Flowers Online – Same Day Delivery</h1>
+<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">
+<div class="badge">🌸 SAME-DAY DELIVERY AVAILABLE</div>
+
+<h1>Send Flowers Online Before Cutoff – Same Day Delivery</h1>
 
 <p>
-Send flowers online fast across Canada & USA. Roses, tulips, lilies & luxury bouquets delivered same-day.
+Last-minute flowers delivered today across Canada & USA.
+Roses, tulips, lilies & premium bouquets ready now.
 </p>
 
 <div class="cta">Send Flowers Now →</div>
 </a>
 </section>
 
-<!-- FEATURES -->
-<section class="grid">
+<!-- TRUST -->
+<section class="trust">
+<div>⭐ 1000+ Happy Customers</div>
+<div>🚚 Same-Day Delivery</div>
+<div>🌎 100+ Cities</div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products">
+<h2>Best Selling Flower Arrangements</h2>
+
+<div class="grid">
+
 <div class="card">
-<h3>🌹 Roses</h3>
-<p>Classic symbol of love. Send roses online instantly.</p>
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+<h3>Luxury Roses</h3>
+<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">Order Now</a>
 </div>
 
 <div class="card">
-<h3>🌷 Tulips</h3>
-<p>Bright and cheerful for any occasion.</p>
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
+<h3>Tulip Bouquets</h3>
+<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">Order Now</a>
 </div>
 
 <div class="card">
-<h3>🌺 Lilies</h3>
-<p>Elegant and timeless floral arrangements.</p>
+<img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d">
+<h3>Elegant Lilies</h3>
+<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">Order Now</a>
 </div>
 
 <div class="card">
-<h3>🌻 Sunflowers</h3>
-<p>Bold, vibrant flowers that brighten any day.</p>
+<img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d">
+<h3>Sunflower Gifts</h3>
+<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">Order Now</a>
 </div>
+
+</div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency">
+<h2>⚠️ Same-Day Delivery Ending Soon</h2>
+<p>Order now before cutoff to guarantee delivery today.</p>
 </section>
 
 <!-- FAQ -->
 <section class="faq">
 <h2>Flower Delivery FAQ</h2>
 
-<details>
-<summary>How fast can I send flowers online?</summary>
-<p>Same-day delivery is available across most cities in Canada & USA.</p>
-</details>
+<details><summary>How fast is delivery?</summary><p>Same-day delivery available in most cities.</p></details>
+<details><summary>Where do you deliver?</summary><p>Across Canada & USA.</p></details>
+<details><summary>What flowers can I send?</summary><p>Roses, tulips, lilies, orchids, sunflowers and more.</p></details>
+<details><summary>Can I send flowers last minute?</summary><p>Yes, same-day delivery is available before cutoff.</p></details>
+<details><summary>Are flowers fresh?</summary><p>Delivered by local florists for freshness.</p></details>
 
-<details>
-<summary>What flowers can I send?</summary>
-<p>Roses, tulips, lilies, orchids, sunflowers, carnations and more.</p>
-</details>
-
-<details>
-<summary>Is same-day delivery guaranteed?</summary>
-<p>Yes, if you order before the local cutoff time.</p>
-</details>
-
-<!-- repeat for SEO -->
-<details><summary>Can I send flowers last minute?</summary><p>Yes, this page helps you send flowers online instantly.</p></details>
-<details><summary>Where do flowers get delivered?</summary><p>Across Canada and the United States.</p></details>
 </section>
 
 <!-- EXIT POP -->
 <div id="exitPopup">
-<div class="popup-box">
-<h2>WAIT! 🌹</h2>
-<p>Get flowers delivered TODAY before cutoff!</p>
-<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="cta">
-CLAIM SAME-DAY DELIVERY →
+<div class="popup">
+<h2>WAIT — DON’T MISS DELIVERY 🌹</h2>
+<p>Order now to guarantee same-day delivery before cutoff.</p>
+<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="cta" target="_blank">
+SECURE DELIVERY NOW →
 </a>
 </div>
 </div>
 
 <!-- SCRIPTS -->
 <script>
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded',function(){
 
-// COUNTDOWN
 const holidays=[
 {name:'Easter',date:new Date('2026-04-05').getTime()},
 {name:"Mother's Day",date:new Date('2026-05-10').getTime()},
 {name:"Father's Day",date:new Date('2026-06-21').getTime()}
 ];
 
-const topBar=document.getElementById('top-bar');
+const bar=document.getElementById('top-bar');
 
-function updateClock(){
+function update(){
 const now=Date.now();
 const next=holidays.find(h=>h.date>now)||holidays[0];
 const diff=next.date-now;
@@ -220,17 +280,16 @@ const d=Math.floor(diff/86400000);
 const h=Math.floor((diff%86400000)/3600000);
 const m=Math.floor((diff%3600000)/60000);
 
-topBar.innerText=`NEXT: ${next.name} (${d}d ${h}h ${m}m)`;
+bar.innerText=`NEXT: ${next.name} (${d}d ${h}h ${m}m)`;
 }
+update();
+setInterval(update,60000);
 
-updateClock();
-setInterval(updateClock,60000);
-
-topBar.onclick=()=>document.getElementById('hero').scrollIntoView({behavior:'smooth'});
+bar.onclick=()=>document.getElementById('hero').scrollIntoView({behavior:'smooth'});
 
 // EXIT POP
 let shown=false;
-document.addEventListener('mouseout',function(e){
+document.addEventListener('mouseout',e=>{
 if(!shown && e.clientY<10){
 document.getElementById('exitPopup').style.display='flex';
 shown=true;
@@ -238,22 +297,6 @@ shown=true;
 });
 
 });
-</script>
-
-<!-- PRODUCT SCHEMA -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"Product",
-"name":"Send Flowers Online",
-"brand":"FloristOne",
-"offers":{
-"@type":"Offer",
-"priceCurrency":"USD",
-"price":"49.99",
-"availability":"https://schema.org/InStock"
-}
-}
 </script>
 
 </body>
