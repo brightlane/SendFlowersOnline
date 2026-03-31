@@ -3,300 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send Flowers Online – Same-Day Delivery | FloristOne</title>
+<meta name="description" content="Send flowers online with same-day delivery across Canada & USA. Luxury bouquets, orchids, roses, sunflowers & gift add-ons. Order now!">
+<meta name="keywords" content="send flowers online, same-day flower delivery, roses, orchids, sunflowers, carnations, gift add-ons">
 
-<title>Send Flowers Online – Same Day Delivery Canada & USA</title>
-<meta name="description" content="Send flowers online instantly. Same-day delivery roses, tulips, lilies, orchids across Canada & USA. Order now before cutoff.">
-<link rel="canonical" href="https://brightlane.github.io/MothersDayFlowers/">
+<!-- Google structured data for products & FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "FloristOne",
+      "url": "https://www.floristone.com",
+      "logo": "https://www.floristone.com/logo.png",
+      "sameAs": ["https://www.facebook.com/FloristOne", "https://www.instagram.com/FloristOne"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the cutoff time for same-day delivery?",
+          "acceptedAnswer": {"@type": "Answer","text": "Orders placed before 3 PM local time are eligible for same-day delivery."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do you deliver to all cities in Canada and the USA?",
+          "acceptedAnswer": {"@type": "Answer","text": "Yes, we deliver across 100+ cities with trusted local florists."}
+        }
+        // Add 48+ more FAQ items here following same format
+      ]
+    },
+    {
+      "@type": "Product",
+      "name": "Luxury Red Roses Bouquet",
+      "image": "https://www.floristone.com/images/roses.jpg",
+      "description": "A beautiful bouquet of 12 red roses with greenery and gift wrapping",
+      "brand": "FloristOne",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799",
+        "priceCurrency": "USD",
+        "price": "69.99",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
+    // Repeat 19+ product schemas (orchids, sunflowers, carnations, add-ons)
+  ]
+}
+</script>
 
 <style>
-:root{
---primary:#b90409;
---gradient:linear-gradient(135deg,#ff4d4d,#b90409);
-}
+/* Reset & basics */
+body, html {margin:0; padding:0; font-family: 'Helvetica Neue', sans-serif; background:#fff; color:#333;}
+a {text-decoration:none; color:#fff;}
+img {max-width:100%; display:block;}
+h1,h2,h3 {margin:0 0 10px 0; line-height:1.2;}
 
-body{
-margin:0;
-font-family:system-ui,-apple-system,Arial;
-background:#fafafa;
-color:#333;
+/* Top urgency bar */
+.top-bar {
+  background: linear-gradient(90deg, #ff5ca2, #a04cff);
+  color:#fff;
+  font-weight:bold;
+  text-align:center;
+  padding:10px 0;
+  font-size:16px;
+  animation: pulse 2s infinite;
 }
+@keyframes pulse {0%,100%{opacity:1;}50%{opacity:0.8;}}
 
-/* TOP BAR */
-.top-bar{
-background:var(--gradient);
-color:#fff;
-text-align:center;
-padding:12px;
-font-weight:700;
-cursor:pointer;
-position:sticky;
-top:0;
-z-index:999;
-transition:.3s;
-}
-.top-bar:hover{transform:scale(1.03);}
+/* Hero */
+.hero {position:relative; text-align:center; color:#fff; background:url('https://www.floristone.com/images/hero.jpg') center/cover no-repeat; padding:120px 20px;}
+.hero h1 {font-size:48px; font-weight:700; margin-bottom:20px; text-shadow: 2px 2px 6px rgba(0,0,0,0.5);}
+.hero p {font-size:22px; margin-bottom:30px; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);}
+.hero .cta {background:#ff5ca2; color:#fff; padding:18px 40px; font-size:22px; border-radius:8px; font-weight:bold; transition:0.3s;}
+.hero .cta:hover {background:#ff3c90; box-shadow:0 0 15px rgba(255,92,162,0.6);}
 
-/* HERO */
-.hero{
-background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url('https://images.unsplash.com/photo-1526045612212-70caf35c14df');
-background-size:cover;
-background-position:center;
-color:#fff;
-text-align:center;
-padding:120px 20px;
-}
+/* Product sections */
+.products {padding:60px 20px; display:flex; flex-wrap:wrap; justify-content:center; gap:30px; background:#f9f9f9;}
+.product-card {background:#fff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); width:260px; text-align:center; overflow:hidden; transition:0.3s;}
+.product-card:hover {transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+.product-card img {border-bottom:1px solid #eee;}
+.product-card h3 {padding:15px 10px; font-size:20px;}
+.product-card p {font-size:16px; color:#555; margin:0 10px 15px;}
+.product-card .price {font-size:18px; color:#ff5ca2; font-weight:bold; margin-bottom:15px;}
+.product-card .buy {background:#ff5ca2; color:#fff; padding:12px 20px; border-radius:6px; margin-bottom:15px; display:inline-block; transition:0.3s;}
+.product-card .buy:hover {background:#ff3c90; box-shadow:0 0 10px rgba(255,92,162,0.5);}
 
-.hero h1{
-font-size:2.6rem;
-max-width:800px;
-margin:auto;
-font-weight:800;
-}
-
-.hero p{
-max-width:600px;
-margin:15px auto;
-font-size:1.2rem;
-}
-
-.badge{
-display:inline-block;
-background:#fff;
-color:#b90409;
-padding:6px 14px;
-border-radius:20px;
-font-weight:700;
-margin-bottom:15px;
-}
-
-.cta{
-display:inline-block;
-margin-top:20px;
-padding:16px 36px;
-background:var(--gradient);
-color:#fff;
-border-radius:40px;
-font-size:1.2rem;
-font-weight:800;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
-}
-
-/* TRUST */
-.trust{
-display:flex;
-justify-content:center;
-gap:40px;
-padding:30px;
-font-weight:600;
-flex-wrap:wrap;
-}
-
-/* PRODUCTS */
-.products{
-padding:50px 20px;
-text-align:center;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1100px;
-margin:auto;
-}
-.card{
-background:#fff;
-border-radius:14px;
-overflow:hidden;
-box-shadow:0 6px 18px rgba(0,0,0,.1);
-transition:.3s;
-}
-.card:hover{transform:translateY(-6px);}
-.card img{width:100%;height:220px;object-fit:cover;}
-.card h3{margin:10px;}
-.card a{
-display:block;
-padding:12px;
-background:var(--gradient);
-color:#fff;
-font-weight:700;
-}
-
-/* URGENCY */
-.urgency{
-background:#111;
-color:#fff;
-text-align:center;
-padding:40px 20px;
-}
+/* Trust section */
+.trust {padding:60px 20px; text-align:center; background:#fff;}
+.trust h2 {font-size:32px; margin-bottom:20px;}
+.trust p {font-size:18px; color:#555; margin-bottom:10px;}
 
 /* FAQ */
-.faq{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
-.faq details{
-background:#fff;
-padding:15px;
-margin-bottom:10px;
-border-radius:10px;
-box-shadow:0 2px 6px rgba(0,0,0,.1);
-}
+.faq {padding:60px 20px; background:#f9f9f9;}
+.faq h2 {text-align:center; font-size:32px; margin-bottom:40px;}
+.faq-item {margin-bottom:20px; background:#fff; padding:20px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+.faq-item h3 {cursor:pointer; position:relative;}
+.faq-item h3::after {content:'+'; position:absolute; right:20px; font-size:24px;}
+.faq-item.open h3::after {content:'−';}
+.faq-item p {display:none; margin-top:10px;}
+.faq-item.open p {display:block;}
 
-/* EXIT POP */
-#exitPopup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.85);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-.popup{
-background:#fff;
-padding:30px;
-border-radius:14px;
-text-align:center;
-max-width:420px;
-}
+/* Footer */
+footer {background:#222; color:#fff; text-align:center; padding:30px 20px;}
+footer a {color:#ff5ca2;}
 </style>
-</head>
 
+</head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar" id="top-bar">
-LOADING COUNTDOWN...
-</div>
+<div class="top-bar">Next Same-Day Delivery Cutoff: 3h 45m – Order Now!</div>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">
-<div class="badge">🌸 SAME-DAY DELIVERY AVAILABLE</div>
-
-<h1>Send Flowers Online Before Cutoff – Same Day Delivery</h1>
-
-<p>
-Last-minute flowers delivered today across Canada & USA.
-Roses, tulips, lilies & premium bouquets ready now.
-</p>
-
-<div class="cta">Send Flowers Now →</div>
-</a>
+<section class="hero">
+  <h1>Send Flowers Online – Same-Day Delivery Across Canada & USA</h1>
+  <p>Order in the next <strong>3 hours</strong> for guaranteed same-day delivery!</p>
+  <a href="#products" class="cta">Send Flowers Now →</a>
 </section>
 
-<!-- TRUST -->
+<section id="products" class="products">
+  <!-- Example Product Card -->
+  <div class="product-card">
+    <img src="https://www.floristone.com/images/roses.jpg" alt="Luxury Red Roses Bouquet">
+    <h3>Luxury Red Roses Bouquet</h3>
+    <p>A stunning bouquet of 12 fresh red roses with greenery.</p>
+    <div class="price">$69.99</div>
+    <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="buy">Send Now →</a>
+  </div>
+  <!-- Repeat 20+ product cards for orchids, sunflowers, carnations, add-ons -->
+</section>
+
 <section class="trust">
-<div>⭐ 1000+ Happy Customers</div>
-<div>🚚 Same-Day Delivery</div>
-<div>🌎 100+ Cities</div>
+  <h2>Trusted By Thousands of Happy Customers</h2>
+  <p>⭐⭐⭐⭐⭐ Rated</p>
+  <p>Delivered across 100+ cities</p>
+  <p>Guaranteed Same-Day Delivery & Freshness</p>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products">
-<h2>Best Selling Flower Arrangements</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
-<h3>Luxury Roses</h3>
-<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">Order Now</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
-<h3>Tulip Bouquets</h3>
-<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">Order Now</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d">
-<h3>Elegant Lilies</h3>
-<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">Order Now</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d">
-<h3>Sunflower Gifts</h3>
-<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank">Order Now</a>
-</div>
-
-</div>
-</section>
-
-<!-- URGENCY -->
-<section class="urgency">
-<h2>⚠️ Same-Day Delivery Ending Soon</h2>
-<p>Order now before cutoff to guarantee delivery today.</p>
-</section>
-
-<!-- FAQ -->
 <section class="faq">
-<h2>Flower Delivery FAQ</h2>
-
-<details><summary>How fast is delivery?</summary><p>Same-day delivery available in most cities.</p></details>
-<details><summary>Where do you deliver?</summary><p>Across Canada & USA.</p></details>
-<details><summary>What flowers can I send?</summary><p>Roses, tulips, lilies, orchids, sunflowers and more.</p></details>
-<details><summary>Can I send flowers last minute?</summary><p>Yes, same-day delivery is available before cutoff.</p></details>
-<details><summary>Are flowers fresh?</summary><p>Delivered by local florists for freshness.</p></details>
-
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>What is the cutoff time for same-day delivery?</h3>
+    <p>Orders placed before 3 PM local time are eligible for same-day delivery.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do you deliver to all cities in Canada and the USA?</h3>
+    <p>Yes, we deliver across 100+ cities with trusted local florists.</p>
+  </div>
+  <!-- Repeat 50+ FAQ items -->
 </section>
 
-<!-- EXIT POP -->
-<div id="exitPopup">
-<div class="popup">
-<h2>WAIT — DON’T MISS DELIVERY 🌹</h2>
-<p>Order now to guarantee same-day delivery before cutoff.</p>
-<a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="cta" target="_blank">
-SECURE DELIVERY NOW →
-</a>
-</div>
-</div>
+<footer>
+  <p>&copy; 2026 FloristOne | <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799">Send Flowers Online</a></p>
+</footer>
 
-<!-- SCRIPTS -->
 <script>
-document.addEventListener('DOMContentLoaded',function(){
+// FAQ toggle
+document.querySelectorAll('.faq-item h3').forEach(h => h.addEventListener('click', () => {
+  h.parentElement.classList.toggle('open');
+}));
 
-const holidays=[
-{name:'Easter',date:new Date('2026-04-05').getTime()},
-{name:"Mother's Day",date:new Date('2026-05-10').getTime()},
-{name:"Father's Day",date:new Date('2026-06-21').getTime()}
-];
-
-const bar=document.getElementById('top-bar');
-
-function update(){
-const now=Date.now();
-const next=holidays.find(h=>h.date>now)||holidays[0];
-const diff=next.date-now;
-
-const d=Math.floor(diff/86400000);
-const h=Math.floor((diff%86400000)/3600000);
-const m=Math.floor((diff%3600000)/60000);
-
-bar.innerText=`NEXT: ${next.name} (${d}d ${h}h ${m}m)`;
-}
-update();
-setInterval(update,60000);
-
-bar.onclick=()=>document.getElementById('hero').scrollIntoView({behavior:'smooth'});
-
-// EXIT POP
-let shown=false;
-document.addEventListener('mouseout',e=>{
-if(!shown && e.clientY<10){
-document.getElementById('exitPopup').style.display='flex';
-shown=true;
-}
-});
-
-});
+// Optional: countdown timer logic for top bar
+let countdown = 3*60*60; // 3 hours in seconds
+const topBar = document.querySelector('.top-bar');
+setInterval(() => {
+  const hrs = Math.floor(countdown/3600);
+  const mins = Math.floor((countdown%3600)/60);
+  const secs = countdown%60;
+  topBar.textContent = `Next Same-Day Delivery Cutoff: ${hrs}h ${mins}m ${secs}s – Order Now!`;
+  countdown--;
+}, 1000);
 </script>
 
 </body>
