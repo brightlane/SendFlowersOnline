@@ -3,257 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Send Flowers Online – Same Day Delivery Canada & USA</title>
-<meta name="description" content="Send flowers online to Canada & USA. Fresh roses, tulips, lilies, orchids, sunflowers & more. Same day delivery available via FloristOne.">
-<meta name="keywords" content="send flowers online, flower delivery, same day flowers, roses, tulips, lilies, orchids, sunflowers, carnations, bouquets, Canada, USA">
-<link rel="canonical" href="https://brightlane.github.io/MothersDayFlowers/">
-<meta property="og:title" content="Send Flowers Online – Same Day Delivery Canada & USA">
-<meta property="og:description" content="Send flowers online to Canada & USA. Fresh roses, tulips, lilies, orchids, sunflowers & more. Same day delivery via FloristOne.">
-<meta property="og:image" content="https://brightlane.github.io/MothersDayFlowers/hero-flower.jpg">
-<meta property="og:url" content="https://brightlane.github.io/MothersDayFlowers/">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Send Flowers Online – Same Day Delivery Canada & USA">
-<meta name="twitter:description" content="Send flowers online to Canada & USA. Fresh roses, tulips, lilies, orchids, sunflowers & more. Same day delivery via FloristOne.">
-<meta name="twitter:image" content="https://brightlane.github.io/MothersDayFlowers/hero-flower.jpg">
-
+<title>Send Flowers Online | Premium Bouquets & Same-Day Delivery</title>
+<meta name="description" content="Send flowers online with same-day delivery. Compare bouquets, roses, orchids, sunflowers & more. High-quality arrangements for every occasion.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* BASE STYLING */
-:root {
-  --primary:#d32f2f; 
-  --secondary:#f48fb1; 
-  --accent:#ffca28;
-  --bg:#fff7f7;
-  --text:#333;
-  --gradient:linear-gradient(90deg,#ff8a65,#d32f2f);
-  --font:'Arial', sans-serif;
-}
+  /* Reset & base */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Poppins', sans-serif; line-height:1.6; background:#fff; color:#333; }
+  a { text-decoration:none; color:#e91e63; transition:0.3s; }
+  a:hover { color:#c2185b; }
 
-body {margin:0; font-family:var(--font); background:var(--bg); color:var(--text);}
-a{color:inherit; text-decoration:none;}
-.container{max-width:1200px; margin:0 auto; padding:0 16px;}
-h1,h2,h3,h4{margin:0 0 12px;}
-p{margin:0 0 12px; line-height:1.5;}
-button, .cta-btn{cursor:pointer; border:none; border-radius:28px; font-weight:600;}
-.cta-btn{padding:14px 32px; background:var(--gradient); color:#fff; display:inline-block; transition:0.3s ease;}
-.cta-btn:hover{transform:scale(1.05);}
-section{padding:60px 0;}
-.section-title{font-size:2rem; margin-bottom:16px; text-align:center;}
-.section-subtitle{font-size:1.1rem; text-align:center; margin-bottom:32px; color:#555;}
+  /* Hero */
+  .hero { 
+    position:relative; 
+    background:linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://via.placeholder.com/1920x1080?text=Hero+Flower') no-repeat center/cover;
+    height:100vh; 
+    display:flex; 
+    flex-direction:column; 
+    justify-content:center; 
+    align-items:center; 
+    text-align:center; 
+    color:#fff;
+    padding:0 20px;
+  }
+  .hero h1 { font-size:3rem; font-weight:700; margin-bottom:1rem; text-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+  .hero p { font-size:1.3rem; margin-bottom:2rem; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+  .hero .cta { background:#e91e63; padding:15px 35px; font-size:1.2rem; font-weight:700; border-radius:50px; color:#fff; }
 
-/* HERO */
-.hero{
-  background:url('https://brightlane.github.io/MothersDayFlowers/hero-flower.jpg') center/cover no-repeat;
-  text-align:center; padding:100px 16px;
-  color:#fff; text-shadow:1px 1px 8px rgba(0,0,0,0.6);
-}
-.hero h1{font-size:3rem; margin-bottom:20px;}
-.hero p{font-size:1.3rem; margin-bottom:24px;}
+  /* Sections */
+  section { padding:80px 20px; max-width:1200px; margin:0 auto; }
+  h2 { font-size:2.5rem; margin-bottom:40px; text-align:center; color:#6a1b9a; }
 
-/* PRODUCT GRID */
-.product-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px;}
-.product-card{background:#fff; border-radius:16px; padding:16px; box-shadow:0 4px 12px rgba(0,0,0,0.08); text-align:center; transition:transform 0.3s ease;}
-.product-card:hover{transform:translateY(-5px);}
-.product-card img{width:100%; border-radius:12px; margin-bottom:12px;}
-.product-card h3{margin-bottom:8px; font-size:1.2rem;}
-.product-card p{font-size:0.95rem; color:#555;}
-.product-card .price{color:var(--primary); font-weight:700; margin-bottom:8px;}
+  /* Product grid */
+  .product-grid, .compare-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; }
+  .product { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition:0.3s; }
+  .product:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.15); }
+  .product img { width:100%; height:auto; display:block; }
+  .product h3 { font-size:1.3rem; padding:15px; }
+  .product p { padding:0 15px 15px; font-size:1rem; color:#555; }
+  .product .price { font-weight:700; color:#e91e63; padding:0 15px 15px; }
 
-/* COMPARISON GRID */
-.compare-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-bottom:40px;}
-.compare-card{background:#fff; border-radius:16px; padding:16px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.08);}
-.compare-card img{width:100%; border-radius:12px; margin-bottom:12px;}
-.compare-card h4{margin-bottom:8px;}
-.compare-card p{color:#555; font-size:0.95rem;}
-.compare-card .price{color:var(--primary); font-weight:700; margin-bottom:8px;}
+  /* Compare grid */
+  .compare-grid .compare-item { background:#f7f3f8; border-radius:12px; padding:20px; text-align:center; }
+  .compare-item img { width:80%; margin-bottom:15px; border-radius:8px; }
 
-/* FAQ */
-.faq-container{max-width:900px; margin:0 auto;}
-.faq-item{margin-bottom:12px; background:#fff; border-radius:12px; padding:16px; box-shadow:0 3px 8px rgba(0,0,0,0.05);}
-.faq-item summary{font-weight:600; cursor:pointer; font-size:1rem; outline:none;}
-.faq-item p{margin-top:8px; font-size:0.95rem; color:#555;}
+  /* FAQ */
+  .faq { max-width:900px; margin:0 auto; }
+  .faq-item { margin-bottom:20px; }
+  .faq-item h4 { font-size:1.2rem; font-weight:600; margin-bottom:5px; color:#6a1b9a; }
+  .faq-item p { font-size:1rem; color:#555; }
 
-/* TRUST & REVIEWS */
-.trust-section{background:#fff0f0; text-align:center; padding:40px 16px; border-radius:16px; margin-top:40px;}
-.trust-section h3{margin-bottom:16px;}
-.trust-section p{font-size:1rem; color:#555;}
-.review-stars{color:gold; font-size:1.2rem; margin-bottom:8px;}
+  /* Footer */
+  footer { background:#6a1b9a; color:#fff; text-align:center; padding:40px 20px; margin-top:80px; }
 
-/* FOOTER */
-footer{background:#d32f2f; color:#fff; text-align:center; padding:24px; font-size:0.9rem;}
-footer a{color:#ffebee; text-decoration:underline;}
+  @media(max-width:768px){ .hero h1 { font-size:2.2rem; } .hero p { font-size:1rem; } }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="hero">
-  <div class="container">
-    <h1>Send Flowers Online – Same Day Delivery Canada & USA</h1>
-    <p>Fresh roses, tulips, lilies, orchids, sunflowers & more – order now for guaranteed freshness!</p>
-    <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" target="_blank" class="cta-btn">Order Flowers Now →</a>
+  <h1>Send Flowers Online Today</h1>
+  <p>Premium bouquets, same-day delivery & handcrafted arrangements. Surprise someone special now!</p>
+  <a href="#products" class="cta">Shop Now</a>
+</section>
+
+<!-- Best Selling Products -->
+<section id="products">
+  <h2>Our Best Selling Bouquets</h2>
+  <div class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/600x600?text=Roses+Bouquet" alt="Red Roses Bouquet">
+      <h3>Red Roses Bouquet</h3>
+      <p>Classic dozen red roses, perfect for any occasion.</p>
+      <p class="price">$49.99</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/600x600?text=Orchids+Arrangement" alt="Orchids Arrangement">
+      <h3>Elegant Orchids</h3>
+      <p>Delicate white orchids in a stylish vase.</p>
+      <p class="price">$59.99</p>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/600x600?text=Sunflowers+Bouquet" alt="Sunflowers Bouquet">
+      <h3>Sunny Sunflowers</h3>
+      <p>Bright sunflowers to light up any room.</p>
+      <p class="price">$39.99</p>
+    </div>
+    <!-- Add more products as needed -->
   </div>
 </section>
 
-<!-- BEST SELLERS -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Best Selling Bouquets</h2>
-    <p class="section-subtitle">Our most popular flowers, loved by customers across Canada & USA.</p>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://brightlane.github.io/MothersDayFlowers/rose-bouquet.jpg" alt="Red Rose Bouquet">
-        <h3>Red Rose Bouquet</h3>
-        <p class="price">$49.99</p>
-        <p>Classic red roses to express your love. Same day delivery available.</p>
-        <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="cta-btn">Order Now</a>
-      </div>
-      <div class="product-card">
-        <img src="https://brightlane.github.io/MothersDayFlowers/tulip-bouquet.jpg" alt="Tulip Bouquet">
-        <h3>Tulip Bouquet</h3>
-        <p class="price">$39.99</p>
-        <p>Bright tulips to celebrate any occasion. Same day delivery available.</p>
-        <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="cta-btn">Order Now</a>
-      </div>
-      <div class="product-card">
-        <img src="https://brightlane.github.io/MothersDayFlowers/lily-bouquet.jpg" alt="Lily Bouquet">
-        <h3>Lily Bouquet</h3>
-        <p class="price">$44.99</p>
-        <p>Elegant lilies symbolizing purity and care. Same day delivery available.</p>
-        <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="cta-btn">Order Now</a>
-      </div>
-      <div class="product-card">
-        <img src="https://brightlane.github.io/MothersDayFlowers/orchid-bouquet.jpg" alt="Orchid Bouquet">
-        <h3>Orchid Bouquet</h3>
-        <p class="price">$59.99</p>
-        <p>Luxury orchids to impress. Perfect for same-day delivery.</p>
-        <a href="https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799" class="cta-btn">Order Now</a>
-      </div>
+<!-- Comparison Grid -->
+<section id="compare">
+  <h2>Compare Our Top Bouquets</h2>
+  <div class="compare-grid">
+    <div class="compare-item">
+      <img src="https://via.placeholder.com/400x400?text=Roses" alt="Roses">
+      <h3>Roses</h3>
+      <p>Romantic, classic, and loved by all.</p>
+    </div>
+    <div class="compare-item">
+      <img src="https://via.placeholder.com/400x400?text=Orchids" alt="Orchids">
+      <h3>Orchids</h3>
+      <p>Elegant, exotic, and long-lasting.</p>
+    </div>
+    <div class="compare-item">
+      <img src="https://via.placeholder.com/400x400?text=Sunflowers" alt="Sunflowers">
+      <h3>Sunflowers</h3>
+      <p>Bright, cheerful, and uplifting.</p>
     </div>
   </div>
 </section>
 
-<!-- COMPARISON GRID -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Compare Our Top Bouquets</h2>
-    <div class="compare-grid">
-      <div class="compare-card">
-        <img src="https://brightlane.github.io/MothersDayFlowers/rose-bouquet.jpg" alt="Red Roses">
-        <h4>Red Roses</h4>
-        <p>Love, romance, classic</p>
-        <p class="price">$49.99</p>
-        <a href="#faq" class="cta-btn">Learn More</a>
-      </div>
-      <div class="compare-card">
-        <img src="https://brightlane.github.io/MothersDayFlowers/tulip-bouquet.jpg" alt="Tulips">
-        <h4>Tulips</h4>
-        <p>Joyful, vibrant, celebratory</p>
-        <p class="price">$39.99</p>
-        <a href="#faq" class="cta-btn">Learn More</a>
-      </div>
-      <div class="compare-card">
-        <img src="https://brightlane.github.io/MothersDayFlowers/lily-bouquet.jpg" alt="Lilies">
-        <h4>Lilies</h4>
-        <p>Elegant, pure, meaningful</p>
-        <p class="price">$44.99</p>
-        <a href="#faq" class="cta-btn">Learn More</a>
-      </div>
-      <div class="compare-card">
-        <img src="https://brightlane.github.io/MothersDayFlowers/orchid-bouquet.jpg" alt="Orchids">
-        <h4>Orchids</h4>
-        <p>Luxury, premium, stunning</p>
-        <p class="price">$59.99</p>
-        <a href="#faq" class="cta-btn">Learn More</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST -->
-<section class="trust-section">
-  <div class="container">
-    <div class="review-stars">⭐⭐⭐⭐⭐</div>
-    <h3>Trusted by Customers Across Canada & USA</h3>
-    <p>Over 10,000 happy customers delivered fresh flowers with FloristOne’s trusted network.</p>
-    <p>Freshness guaranteed – or we’ll make it right!</p>
-  </div>
-</section>
-
-<!-- FAQ -->
+<!-- FAQ Section -->
 <section id="faq">
-  <div class="container">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-subtitle">All your flower delivery questions answered.</p>
-    <div class="faq-container">
-      <details class="faq-item"><summary>How fast can I get flowers delivered?</summary><p>We offer same-day delivery in Canada & USA via FloristOne when you order before cutoff times.</p></details>
-      <details class="faq-item"><summary>Which flowers are available?</summary><p>Roses, tulips, lilies, orchids, sunflowers, carnations, and mixed bouquets are available.</p></details>
-      <details class="faq-item"><summary>Can I add gifts to my flower order?</summary><p>Yes! You can include chocolates, teddy bears, and cards with every bouquet.</p></details>
-      <details class="faq-item"><summary>Do you guarantee freshness?</summary><p>Yes, all flowers are guaranteed fresh. Any issues will be replaced or refunded.</p></details>
-      <!-- Add remaining 46+ FAQs here with same structure -->
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h4>How do I send flowers online?</h4>
+      <p>Select your bouquet, choose delivery options, and checkout securely.</p>
     </div>
+    <div class="faq-item">
+      <h4>Do you offer same-day delivery?</h4>
+      <p>Yes, select the same-day option at checkout. Cutoff times apply.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I include a personalized note?</h4>
+      <p>Absolutely, you can add a custom message with your order.</p>
+    </div>
+    <!-- Add 50+ FAQs in similar format -->
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 FlowerDelivery. <a href="https://brightlane.github.io/MothersDayFlowers/">Send Flowers Online</a> | Trusted Florist Network | Same Day Delivery Canada & USA</p>
+  <p>&copy; 2026 Send Flowers Online | All Rights Reserved</p>
 </footer>
 
-<!-- JSON-LD: Product & FAQ Schema -->
+<!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "name":"FlowerDelivery",
-      "url":"https://brightlane.github.io/MothersDayFlowers/"
-    },
-    {
-      "@type":"Product",
-      "name":"Red Rose Bouquet",
-      "image":"https://brightlane.github.io/MothersDayFlowers/rose-bouquet.jpg",
-      "description":"Classic red roses to express your love. Same day delivery available.",
-      "brand":{"@type":"Brand","name":"FloristOne"},
-      "offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","price":"49.99","priceCurrency":"USD","availability":"https://schema.org/InStock"}
-    },
-    {
-      "@type":"Product",
-      "name":"Tulip Bouquet",
-      "image":"https://brightlane.github.io/MothersDayFlowers/tulip-bouquet.jpg",
-      "description":"Bright tulips to celebrate any occasion. Same day delivery available.",
-      "brand":{"@type":"Brand","name":"FloristOne"},
-      "offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","price":"39.99","priceCurrency":"USD","availability":"https://schema.org/InStock"}
-    },
-    {
-      "@type":"Product",
-      "name":"Lily Bouquet",
-      "image":"https://brightlane.github.io/MothersDayFlowers/lily-bouquet.jpg",
-      "description":"Elegant lilies symbolizing purity and care. Same day delivery available.",
-      "brand":{"@type":"Brand","name":"FloristOne"},
-      "offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","price":"44.99","priceCurrency":"USD","availability":"https://schema.org/InStock"}
-    },
-    {
-      "@type":"Product",
-      "name":"Orchid Bouquet",
-      "image":"https://brightlane.github.io/MothersDayFlowers/orchid-bouquet.jpg",
-      "description":"Luxury orchids to impress. Perfect for same-day delivery.",
-      "brand":{"@type":"Brand","name":"FloristOne"},
-      "offers":{"@type":"Offer","url":"https://www.floristone.com/index.cfm?source_id=aff&AffiliateID=2013017799","price":"59.99","priceCurrency":"USD","availability":"https://schema.org/InStock"}
-    },
-    {
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"How fast can I get flowers delivered?","acceptedAnswer":{"@type":"Answer","text":"We offer same-day delivery in Canada & USA via FloristOne when you order before cutoff times."}},
-        {"@type":"Question","name":"Which flowers are available?","acceptedAnswer":{"@type":"Answer","text":"Roses, tulips, lilies, orchids, sunflowers, carnations, and mixed bouquets are available."}},
-        {"@type":"Question","name":"Can I add gifts to my flower order?","acceptedAnswer":{"@type":"Answer","text":"Yes! You can include chocolates, teddy bears, and cards with every bouquet."}},
-        {"@type":"Question","name":"Do you guarantee freshness?","acceptedAnswer":{"@type":"Answer","text":"Yes, all flowers are guaranteed fresh. Any issues will be replaced or refunded."}}
-        /* Add remaining 46+ FAQs here */
-      ]
-    }
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Send Flowers Online",
+  "url": "https://www.yourdomain.com",
+  "logo": "https://via.placeholder.com/200x80?text=Logo",
+  "sameAs": [
+    "https://www.facebook.com/yourpage",
+    "https://www.instagram.com/yourpage"
+  ],
+  "potentialAction": {
+    "@type": "OrderAction",
+    "target": "https://www.yourdomain.com/products",
+    "name": "Order Flowers Online"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I send flowers online?", "acceptedAnswer": { "@type": "Answer", "text": "Select your bouquet, choose delivery options, and checkout securely." } },
+    { "@type": "Question", "name": "Do you offer same-day delivery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, select the same-day option at checkout. Cutoff times apply." } },
+    { "@type": "Question", "name": "Can I include a personalized note?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely, you can add a custom message with your order." } }
+    /* Add all 50+ FAQ entries here */
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Red Roses Bouquet",
+  "image": "https://via.placeholder.com/600x600?text=Roses+Bouquet",
+  "description": "Classic dozen red roses, perfect for any occasion.",
+  "sku": "ROSE-12",
+  "brand": { "@type": "Brand", "name": "Send Flowers Online" },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.yourdomain.com/products/red-roses-bouquet",
+    "priceCurrency": "USD",
+    "price": "49.99",
+    "availability": "https://schema.org/InStock"
+  }
+}
+/* Add 20+ product schemas for all flowers and gift add-ons */
+</script>
+
 </body>
 </html>
