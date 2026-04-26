@@ -1,0 +1,57 @@
+blog:
+  title: "Same-Day Flower Delivery - Send Flowers with FloriStone"
+  description: "Send same-day flowers to your loved ones. Fast, reliable delivery with guaranteed on-time service. Order today through FloriStone!"
+  affiliate_link: "https://www.floristone.com/main.cfm?occ=sd&source_id=aff&AffiliateID=2013017799"
+  keywords:
+    - "same-day flowers"
+    - "flower delivery"
+    - "same-day delivery"
+    - "send flowers today"
+    - "flowers for any occasion"
+  
+  content:
+    titles:
+      - "Why Same-Day Flower Delivery Is a Game-Changer for Last-Minute Gifts"
+      - "Send Flowers Today: Guaranteed Same-Day Delivery with FloriStone"
+      - "Fresh Flowers, Delivered Same Day: The Benefits of Same-Day Delivery"
+      - "How FloriStone Makes Last-Minute Flower Orders Effortless"
+    
+    intro_paragraphs:
+      - "Looking for a quick way to brighten someone's day? FloriStone offers fast, reliable same-day flower delivery so you never miss an opportunity to send a thoughtful gift."
+      - "Need to send flowers today? FloriStone guarantees same-day delivery on a wide variety of stunning bouquets. Whether it's a birthday or a special occasion, we've got you covered."
+      - "When it comes to expressing your feelings, flowers are a timeless gift. With FloriStone's same-day delivery, you can be sure that your flowers will arrive fresh and on time."
+      - "Life can get busy, but that doesn't mean you have to miss out on sending a thoughtful gift. With FloriStone’s same-day delivery service, you can send flowers right away!"
+
+    why_choose_floriStone:
+      - "Fast, reliable service with guaranteed same-day delivery."
+      - "Wide selection of beautiful bouquets for any occasion."
+      - "Secure online ordering process for your convenience."
+      - "Competitive pricing with exclusive offers through our affiliate link."
+    
+    how_to_order:
+      - "Browse FloriStone's wide selection of same-day flowers."
+      - "Select the perfect bouquet for your loved one."
+      - "Ensure your order is placed by 2:00 PM local time for same-day delivery."
+      - "Complete your purchase securely through our affiliate link."
+
+    footer:
+      copyright: "© 2026 Send Flowers Online. All rights reserved."
+      delivered_by: "Delivered by FloriStone"
+      privacy_policy_url: "/privacy-policy"
+      terms_of_service_url: "/terms-of-service"
+
+styles:
+  header:
+    background_color: "#003366"
+    text_color: "white"
+    padding: "20px"
+  cta_button:
+    background_color: "#FF2E63"
+    text_color: "white"
+    hover_color: "#E02456"
+    padding: "15px 25px"
+    font_size: "18px"
+  footer:
+    background_color: "#003366"
+    text_color: "white"
+    padding: "15px"
