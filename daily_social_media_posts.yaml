@@ -1,0 +1,30 @@
+posts:
+  - platform: "Facebook"
+    title: "🌸 Send Flowers Today with Same-Day Delivery!"
+    body: "Need flowers delivered today? We’ve got you covered! Send beautiful, fresh flowers with guaranteed same-day delivery through FloriStone! 🌷 Hurry, order now and make someone's day brighter. #SameDayDelivery #Flowers #FloriStone"
+    call_to_action: "Order Now for Same-Day Delivery"
+    link: "https://www.floristone.com/main.cfm?occ=sd&source_id=aff&AffiliateID=2013017799"
+
+  - platform: "Instagram"
+    title: "🌹 Send Love Today with Same-Day Flower Delivery!"
+    body: "Don’t wait for the perfect moment – create it! Send stunning flowers today with FloriStone’s guaranteed same-day delivery service 🌼 Click the link in bio to place your order now. #SameDayDelivery #FloriStone #FlowersForAnyOccasion"
+    call_to_action: "Order Now - Link in Bio"
+    link: "https://www.floristone.com/main.cfm?occ=sd&source_id=aff&AffiliateID=2013017799"
+
+  - platform: "Twitter"
+    title: "🌸 Same-Day Flower Delivery with FloriStone!"
+    body: "Running out of time? No problem! Order beautiful flowers today with SAME-DAY delivery via FloriStone! 🏃‍♂️ Order now for guaranteed delivery. #SameDayFlowers #FloriStone"
+    call_to_action: "Order Today!"
+    link: "https://www.floristone.com/main.cfm?occ=sd&source_id=aff&AffiliateID=2013017799"
+
+  - platform: "LinkedIn"
+    title: "Same-Day Flower Delivery with FloriStone"
+    body: "Looking to send flowers for a business or personal occasion? FloriStone offers reliable same-day flower delivery that’s sure to make an impact. Order today and have your flowers delivered fresh and on time. #BusinessGifts #FloriStone #SameDayDelivery"
+    call_to_action: "Order Today - Click to Shop"
+    link: "https://www.floristone.com/main.cfm?occ=sd&source_id=aff&AffiliateID=2013017799"
+
+  - platform: "Pinterest"
+    title: "Send Same-Day Flowers Today with FloriStone!"
+    body: "Beautiful flowers delivered same-day? Yes, please! Send stunning bouquets right away with FloriStone’s same-day delivery service. #Flowers #SameDayDelivery #FloriStone"
+    call_to_action: "Order Now - Link in Bio"
+    link: "https://www.floristone.com/main.cfm?occ=sd&source_id=aff&AffiliateID=2013017799"
