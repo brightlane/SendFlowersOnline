@@ -3,75 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page not found on our site. Check out the best flowers for delivery today!">
-    <meta name="keywords" content="404, page not found, flowers, delivery, same-day flowers, best flowers for mom">
-    <title>Oops! Page Not Found</title>
+    <meta name="description" content="Page not found. Oops, looks like the page you were looking for doesn’t exist.">
+    <title>404 - Page Not Found</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
+            background-color: #f0f0f0;
             color: #333;
-        }
-
-        .container {
             text-align: center;
             padding: 50px;
         }
 
         h1 {
-            font-size: 100px;
             color: #FF2E63;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 24px;
-            color: #555;
+            font-size: 48px;
         }
 
         p {
-            font-size: 16px;
-            color: #777;
+            font-size: 20px;
+            margin-bottom: 30px;
         }
 
-        .cta-button {
+        a {
+            text-decoration: none;
             background-color: #FF2E63;
             color: white;
-            padding: 15px 30px;
+            padding: 15px 25px;
             font-size: 18px;
-            text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px;
-            display: inline-block;
         }
 
-        .cta-button:hover {
+        a:hover {
             background-color: #E02456;
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 12px;
-            color: #888;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>404</h1>
-    <h2>Oops! We can't find the page you're looking for.</h2>
-    <p>
-        It seems the page you were trying to reach does not exist or has been moved. But don't worry! You can still find amazing flowers for any occasion, including same-day delivery options.
-    </p>
-    <a href="https://www.floristone.com/main.cfm?occ=sd&source_id=aff&AffiliateID=2013017799" class="cta-button" target="_blank">Shop Same-Day Flowers Now</a>
-</div>
-
-<footer>
-    <p>&copy; 2026 Send Flowers Online. All rights reserved.</p>
-</footer>
+    <h1>Oops! Page Not Found.</h1>
+    <p>It looks like the page you're looking for doesn’t exist. But don’t worry, you can always go back to our <a href="index.html">Home Page</a> and find what you're looking for!</p>
 
 </body>
 </html>
