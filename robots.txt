@@ -1,0 +1,20 @@
+# robots.txt for https://www.yoursite.com/
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Disallow: 
+
+# Disallow specific parts of the site (example: admin, login pages, etc.)
+Disallow: /admin/
+Disallow: /login/
+
+# Prevent search engines from crawling scripts and images if not necessary
+Disallow: /scripts/
+Disallow: /images/
+
+# Allow a specific bot (Googlebot) to crawl everything
+User-agent: Googlebot
+Disallow: 
+
+# Sitemap location (important for SEO)
+Sitemap: https://www.yoursite.com/sitemap.xml
