@@ -2,11 +2,11 @@ import os
 import re
 
 # Correct affiliate ID and URL
-OLD_IDS = ["2013017799", "YOUR_AFFILIATE_ID_PLACEHOLDER"]
+OLD_IDS = ["21885", "21885"]
 CORRECT_ID = "21885"
-OLD_URL = "index.cfm"
+OLD_URL = "main.cfm"
 CORRECT_URL = "main.cfm"
-OLD_OCC = "occ=sd"
+OLD_OCC = "occ=md"
 CORRECT_OCC = "occ=md"
 
 fixed = 0
