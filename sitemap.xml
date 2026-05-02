@@ -1,60 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Homepage URL -->
-  <url>
-    <loc>https://brightlane.github.io/SendFlowersOnline/</loc>
-    <lastmod>2026-04-26</lastmod>
-    <priority>1.00</priority>
-  </url>
-
-  <!-- About Page (if applicable) -->
-  <url>
-    <loc>https://brightlane.github.io/SendFlowersOnline/about</loc>
-    <lastmod>2026-04-26</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- Services Page (if applicable) -->
-  <url>
-    <loc>https://brightlane.github.io/SendFlowersOnline/services</loc>
-    <lastmod>2026-04-26</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- Blog Page (if applicable) -->
-  <url>
-    <loc>https://brightlane.github.io/SendFlowersOnline/blog</loc>
-    <lastmod>2026-04-26</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- Contact Page (if applicable) -->
-  <url>
-    <loc>https://brightlane.github.io/SendFlowersOnline/contact</loc>
-    <lastmod>2026-04-26</lastmod>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- FAQ Page (if applicable) -->
-  <url>
-    <loc>https://brightlane.github.io/SendFlowersOnline/faq</loc>
-    <lastmod>2026-04-26</lastmod>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- Product or Service Pages (if applicable) -->
-  <!-- Add any specific product/service pages that you want to include -->
-  <url>
-    <loc>https://brightlane.github.io/SendFlowersOnline/roses-for-mothers-day</loc>
-    <lastmod>2026-04-26</lastmod>
-    <priority>0.90</priority>
-  </url>
-
-  <url>
-    <loc>https://brightlane.github.io/SendFlowersOnline/flowers-delivery-service</loc>
-    <lastmod>2026-04-26</lastmod>
-    <priority>0.90</priority>
-  </url>
-
+  <url><loc>https://brightlane.github.io/SendFlowersOnline/</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://brightlane.github.io/SendFlowersOnline/blog.html</loc><lastmod>2026-05-02</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://brightlane.github.io/SendFlowersOnline/floristone_same_day_delivery.html</loc><lastmod>2026-05-02</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>
