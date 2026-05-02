@@ -1,42 +1,32 @@
 import os
+import re
 
-# Define your affiliate ID
-affiliate_id = '2013017799'  # Replace with your actual affiliate ID
+# Correct affiliate ID and URL
+OLD_IDS = ["2013017799", "YOUR_AFFILIATE_ID_PLACEHOLDER"]
+CORRECT_ID = "21885"
+OLD_URL = "index.cfm"
+CORRECT_URL = "main.cfm"
+OLD_OCC = "occ=sd"
+CORRECT_OCC = "occ=md"
 
-# Define the path to your directory containing HTML files
-directory = './your-website-folder'
+fixed = 0
+for filename in os.listdir("."):
+    if not filename.endswith(".html") and not filename.endswith(".py") and not filename.endswith(".js"):
+        continue
+    try:
+        with open(filename, "r", encoding="utf-8") as f:
+            content = f.read()
+        original = content
+        for old_id in OLD_IDS:
+            content = content.replace(old_id, CORRECT_ID)
+        content = content.replace(OLD_URL, CORRECT_URL)
+        content = content.replace(OLD_OCC, CORRECT_OCC)
+        if content != original:
+            with open(filename, "w", encoding="utf-8") as f:
+                f.write(content)
+            print(f"Fixed: {filename}")
+            fixed += 1
+    except Exception as e:
+        print(f"Skipped {filename}: {e}")
 
-# Function to update links in the HTML file
-def update_affiliate_links(file_path, affiliate_id):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        content = file.read()
-    
-    # Replace placeholder with your affiliate link
-    content = content.replace("YOUR_AFFILIATE_ID_PLACEHOLDER", affiliate_id)
-    
-    # Cross-linking: You can add more links to related blog posts here
-    content = content.replace("<a href='/related-post1'>", "<a href='/related-post1' title='Related post 1'>")
-    content = content.replace("<a href='/related-post2'>", "<a href='/related-post2' title='Related post 2'>")
-
-    # SEO optimization: Add meta description, keywords, etc.
-    meta_description = "Send same-day flowers today with guaranteed delivery from Floristone. Order now through our exclusive affiliate link."
-    meta_keywords = "same-day flowers, send flowers, flower delivery, Floristone, same-day delivery"
-
-    content = content.replace("<head>", f"<head>\n    <meta name='description' content='{meta_description}'>\n    <meta name='keywords' content='{meta_keywords}'>")
-    
-    # Cross-link related pages for better SEO
-    content = content.replace("</body>", """
-    <a href="/page1" rel="noopener noreferrer" title="Check out our latest flower arrangements!">Our New Flower Arrangements</a>
-    <a href="/page2" rel="noopener noreferrer" title="Learn about the benefits of same-day flower delivery">Why Same-Day Delivery?</a>
-    </body>""")
-    
-    # Save the updated content
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(content)
-
-# Loop through all HTML files in the specified directory
-for filename in os.listdir(directory):
-    if filename.endswith(".html"):
-        file_path = os.path.join(directory, filename)
-        update_affiliate_links(file_path, affiliate_id)
-        print(f"Updated affiliate links and SEO for: {filename}")
+print(f"\nDone. Fixed {fixed} files. Affiliate ID is now 21885 everywhere.")
