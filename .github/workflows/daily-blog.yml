@@ -10,6 +10,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -31,17 +32,20 @@ jobs:
           git fetch origin main
           git reset --hard origin/main
 
-      - name: Fix affiliate IDs
+      - name: Fix affiliate IDs across all files
         run: python3 update_affiliate_links.py
 
       - name: Generate daily blog post
         run: python3 daily_blog_generator.py
 
+      - name: Run multilingual Bing blast (2000 pages, 5 languages)
+        run: python3 sfo_bing_blast.py
+
       - name: Commit and push
         run: |
           git add .
           git diff --staged --quiet && echo "Nothing to commit" && exit 0
-          git commit -m "Daily blog update [$(date +'%Y-%m-%d')]"
+          git commit -m "Daily update + Bing blast [$(date +'%Y-%m-%d')]"
           git fetch origin main
           if git rebase -X theirs origin/main; then
             git push origin main && exit 0
@@ -50,5 +54,5 @@ jobs:
           git reset --hard origin/main
           git add .
           git diff --staged --quiet && exit 0
-          git commit -m "Daily blog update (retry) [$(date +'%Y-%m-%d')]"
+          git commit -m "Daily update (retry) [$(date +'%Y-%m-%d')]"
           git push origin main
