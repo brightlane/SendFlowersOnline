@@ -3,14 +3,15 @@ import hashlib
 import os
 
 # ─────────────────────────────────────────────
-# CONFIG
+# CONFIG — DO NOT CHANGE AFFILIATE URL
 # ─────────────────────────────────────────────
-AFF_BASE = "https://www.floristone.com/main.cfm?source_id=aff&AffiliateID=21885"
+AFF_URL  = "https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799"
 BASE_URL = "https://brightlane.github.io/SendFlowersOnline"
-today = datetime.date.today()
+
+today    = datetime.date.today()
 date_str = str(today)
-year = today.year
-seed = int(hashlib.md5(date_str.encode()).hexdigest()[:8], 16)
+year     = today.year
+seed     = int(hashlib.md5(date_str.encode()).hexdigest()[:8], 16)
 
 # ─────────────────────────────────────────────
 # CONTENT POOLS
@@ -24,14 +25,14 @@ cities = [
 ]
 
 occasions = [
-    {"name":"Mother's Day","slug":"mothers-day","tag":"md"},
-    {"name":"Birthday",    "slug":"birthday",   "tag":"bd"},
-    {"name":"Anniversary", "slug":"anniversary","tag":"an"},
-    {"name":"Sympathy",    "slug":"sympathy",   "tag":"sy"},
-    {"name":"Get Well",    "slug":"get-well",   "tag":"gw"},
-    {"name":"Romance",     "slug":"romance",    "tag":"ro"},
-    {"name":"Thank You",   "slug":"thank-you",  "tag":"ty"},
-    {"name":"New Baby",    "slug":"new-baby",   "tag":"nb"},
+    {"name":"Mother's Day","slug":"mothers-day"},
+    {"name":"Birthday",    "slug":"birthday"},
+    {"name":"Anniversary", "slug":"anniversary"},
+    {"name":"Sympathy",    "slug":"sympathy"},
+    {"name":"Get Well",    "slug":"get-well"},
+    {"name":"Romance",     "slug":"romance"},
+    {"name":"Thank You",   "slug":"thank-you"},
+    {"name":"New Baby",    "slug":"new-baby"},
 ]
 
 titles = [
@@ -54,11 +55,27 @@ occasion = occasions[(seed // 7) % len(occasions)]
 title_t  = titles[(seed // 13) % len(titles)]
 intro_t  = intros[(seed // 17) % len(intros)]
 
-title = title_t.format(occ=occasion["name"], city=city, year=year)
-intro = intro_t.format(occ=occasion["name"].lower(), city=city)
-aff_link = f"{AFF_BASE}&occ={occasion['tag']}"
+title    = title_t.format(occ=occasion["name"], city=city, year=year)
+intro    = intro_t.format(occ=occasion["name"].lower(), city=city)
+
 city_slug = city.lower().replace(" ", "-")
-filename = f"blog-{city_slug}-{occasion['slug']}-{date_str}.html"
+filename  = f"blog-{city_slug}-{occasion['slug']}-{date_str}.html"
+
+# ─────────────────────────────────────────────
+# CROSS-LINKS
+# ─────────────────────────────────────────────
+RELATED_SITES = [
+    ("Send Flowers Online",    "https://brightlane.github.io/SendFlowersOnline/"),
+    ("Mother's Day Flowers",   "https://brightlane.github.io/MothersDayFlowers/"),
+    ("Bouquet Flowers",        "https://brightlane.github.io/BouquetFlowers/"),
+    ("Valentine's Day Flowers","https://brightlane.github.io/ValentinesDayFlowers/"),
+    ("FTD Flowers",            "https://brightlane.github.io/FtdFlowers/"),
+    ("Same Day Flowers",       "https://brightlane.github.io/SameDayFlowers/"),
+    ("Christmas Flowers",      "https://brightlane.github.io/ChristmasFlowers/"),
+    ("Flower Delivery",        "https://brightlane.github.io/FlowerDelivery/"),
+    ("Same Day Florist",       "https://brightlane.github.io/SameDayFlorist/"),
+]
+related_links = " &nbsp;|&nbsp; ".join(f'<a href="{url}">{name}</a>' for name, url in RELATED_SITES)
 
 # ─────────────────────────────────────────────
 # HTML
@@ -75,7 +92,7 @@ html = f"""<!DOCTYPE html>
     <script type="application/ld+json">
     {{"@context":"https://schema.org","@graph":[
       {{"@type":"Article","headline":"{title}","datePublished":"{date_str}","dateModified":"{date_str}","author":{{"@type":"Organization","name":"SendFlowersOnline"}}}},
-      {{"@type":"Product","name":"Floristone {occasion['name']} Flowers — {city}","offers":{{"@type":"Offer","priceCurrency":"USD","price":"29.99","availability":"https://schema.org/InStock","url":"{aff_link}","deliveryLeadTime":{{"@type":"QuantitativeValue","value":"0","unitCode":"DAY"}}}},"aggregateRating":{{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"18742"}}}}
+      {{"@type":"Product","name":"Floristone {occasion['name']} Flowers — {city}","offers":{{"@type":"Offer","priceCurrency":"USD","price":"29.99","availability":"https://schema.org/InStock","url":"{AFF_URL}","deliveryLeadTime":{{"@type":"QuantitativeValue","value":"0","unitCode":"DAY"}}}},"aggregateRating":{{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"18742"}}}}
     ]}}
     </script>
     <style>
@@ -99,6 +116,9 @@ html = f"""<!DOCTYPE html>
         .faq-box{{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;margin:32px 0;}}
         .faq-box strong{{display:block;color:#1a1a1a;margin-bottom:8px;}}
         .faq-box p{{margin:0;font-size:0.92rem;}}
+        .related{{background:#fff;border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:0.82rem;}}
+        .related a{{color:var(--brand);text-decoration:none;font-weight:600;}}
+        .related a:hover{{text-decoration:underline;}}
         .back{{display:block;text-align:center;margin-top:32px;font-size:0.85rem;color:var(--brand);text-decoration:none;}}
         footer{{background:#111;color:#888;text-align:center;padding:24px;font-size:0.78rem;}}
     </style>
@@ -117,7 +137,7 @@ html = f"""<!DOCTYPE html>
     <div class="cta-box">
         <h2>Send {occasion['name']} Flowers to {city} Now</h2>
         <p>From $29.99 · Free delivery · $0 fees · 4.8★ from 18,742 customers</p>
-        <a href="{aff_link}" class="cta-btn">Send Flowers Online Now 🌷</a>
+        <a href="{AFF_URL}" class="cta-btn" target="_blank" rel="nofollow sponsored noopener">Send Flowers Online Now 🌷</a>
         <div class="trust-row">
             <span>✓ FREE DELIVERY</span><span>✓ $0 FEES</span><span>✓ FRESHNESS GUARANTEED</span><span>✓ LIVE TRACKING</span>
         </div>
@@ -126,8 +146,13 @@ html = f"""<!DOCTYPE html>
         <strong>Q: Can I send {occasion['name'].lower()} flowers online to {city} today?</strong>
         <p>Yes. Floristone guarantees same-day delivery across {city} with free delivery and $0 service fees. Order before the daily cutoff for guaranteed same-day arrival. The price shown at checkout is the final price — no hidden fees.</p>
     </div>
+    <a href="{AFF_URL}" class="back" target="_blank" rel="nofollow sponsored noopener">→ Browse all {occasion['name'].lower()} arrangements on Floristone</a>
     <a href="{BASE_URL}/" class="back">← Browse all flower delivery options</a>
 </article>
+<div class="related">
+    <strong>More Flower Delivery Sites:</strong><br><br>
+    {related_links}
+</div>
 <footer>This page contains affiliate links. We may earn a commission at no cost to you. © {year} SendFlowersOnline</footer>
 </body>
 </html>"""
@@ -135,16 +160,6 @@ html = f"""<!DOCTYPE html>
 with open(filename, "w", encoding="utf-8") as f:
     f.write(html)
 
-# Update sitemap
-sitemap_entry = f'  <url><loc>{BASE_URL}/{filename}</loc><lastmod>{date_str}</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>'
-if os.path.exists("sitemap.xml"):
-    with open("sitemap.xml", "r") as f:
-        sm = f.read()
-    if filename not in sm:
-        sm = sm.replace("</urlset>", f"{sitemap_entry}\n</urlset>")
-        with open("sitemap.xml", "w") as f:
-            f.write(sm)
-
 print(f"Generated: {filename}")
 print(f"City: {city} | Occasion: {occasion['name']}")
-print(f"Affiliate ID: 21885 ✓")
+print(f"Affiliate URL: {AFF_URL}")
