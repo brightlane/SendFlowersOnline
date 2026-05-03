@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // ✅ CORRECT AFFILIATE URL — DO NOT CHANGE
-const AFFILIATE = 'https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799';
+const AFFILIATE = 'https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799';
 const BASE_URL = 'https://brightlane.github.io';
 
 const SITES = {
