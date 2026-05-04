@@ -1,24 +1,65 @@
 {
-  "program": "FloristOne",
+  "network": "floristone",
   "affiliate_id": "2013017799",
-  "base_url": "https://www.floristone.com/main.cfm",
-  "params": {
-    "cat": "r",
-    "source_id": "aff",
-    "AffiliateID": "2013017799"
+
+  "links": {
+    "direct": "http://www.floristone.com/main.cfm?source_id=aff&AffiliateID=2013017799&occ=mothersday",
+    "manychat_entry": "https://m.me/brightlane?ref=nwkkk7vkps17",
+    "fallback": "https://brightlane.github.io/SameDayFlowers/"
   },
-  "full_url": "https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799",
-  "site_url": "https://brightlane.github.io/",
-  "properties": [
-    "https://brightlane.github.io/SendFlowersOnline/",
-    "https://brightlane.github.io/MothersDayFlowers/",
-    "https://brightlane.github.io/BouquetFlowers/",
-    "https://brightlane.github.io/ValentinesDayFlowers/",
-    "https://brightlane.github.io/FtdFlowers/",
-    "https://brightlane.github.io/SameDayFlowers/",
-    "https://brightlane.github.io/ChristmasFlowers/",
-    "https://brightlane.github.io/FlowerDelivery/",
-    "https://brightlane.github.io/SameDayFlorist/"
+
+  "tracking": {
+    "source_id": "aff",
+    "AffiliateID": "2013017799",
+    "occ": "mothersday",
+    "campaign": "vulture_10k_mothers_day"
+  },
+
+  "routing_rules": {
+    "default": "direct",
+
+    "panic_window": {
+      "enabled": true,
+      "start_date": "2026-05-07",
+      "end_date": "2026-05-10",
+      "route": "manychat_entry"
+    },
+
+    "high_intent_keywords": [
+      "same day flowers",
+      "deliver flowers today",
+      "last minute flowers",
+      "mother's day flowers"
+    ],
+
+    "keyword_route": {
+      "match": "high_intent_keywords",
+      "route": "manychat_entry"
+    },
+
+    "device_rules": {
+      "mobile": "manychat_entry",
+      "desktop": "direct"
+    },
+
+    "traffic_split": {
+      "enabled": true,
+      "manychat_percentage": 40,
+      "direct_percentage": 60
+    }
+  },
+
+  "products": [
+    "Red Roses",
+    "Pink Peonies",
+    "Orchid Towers",
+    "Wildflower Baskets"
   ],
-  "last_updated": "2026-05-03"
+
+  "geo": {
+    "primary": "US",
+    "secondary": ["CA"]
+  },
+
+  "last_updated": "2026-05-04T00:00:00Z"
 }
