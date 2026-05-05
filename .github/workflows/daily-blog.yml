@@ -1,59 +1,53 @@
-name: Daily Blog Generator
+name: Vulture 10K Daily Engine
+
 on:
   schedule:
-    - cron: "0 9 * * *"
-  workflow_dispatch:
+    - cron: "0 9 * * *" # Runs daily at 9:00 AM
+  workflow_dispatch: # Allows you to trigger it manually
+
 permissions:
   contents: write
+
 jobs:
-  build:
+  run-vulture-matrix:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
     steps:
-      - name: Checkout repo
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
+          # fetch-depth 0 ensures the full history is downloaded for the rebase
           fetch-depth: 0
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Git config
+      - name: Install Dependencies
         run: |
-          git config user.name "auto-blog-bot"
-          git config user.email "bot@brightlane.io"
+          python -m pip install --upgrade pip
+          pip install requests
 
-      - name: Pull latest
+      - name: Execute Vulture Master Script
         run: |
-          git fetch origin main
-          git reset --hard origin/main
+          # Runs the master generator if it exists in the repo
+          if [ -f vulture_generator_master.py ]; then python vulture_generator_master.py; fi
 
-      - name: Fix affiliate IDs across all files
-        run: python3 update_affiliate_links.py
-
-      - name: Generate daily blog post
-        run: python3 daily_blog_generator.py
-
-      - name: Run multilingual Bing blast (2000 pages, 5 languages)
-        run: python3 sfo_bing_blast.py
-
-      - name: Generate sitemap
-        run: python3 generate_sitemap.py
-
-      - name: Commit and push
+      - name: Commit and Push Changes
         run: |
+          git config user.name "Vulture-Bot"
+          git config user.email "actions@github.com"
           git add .
-          git diff --staged --quiet && echo "Nothing to commit" && exit 0
-          git commit -m "Daily update + Bing blast [$(date +'%Y-%m-%d')]"
-          git fetch origin main
-          if git rebase -X theirs origin/main; then
-            git push origin main && exit 0
+
+          # Check if there are actually changes before committing
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Vulture Engine Sync: $(date +'%Y-%m-%d')"
+
+            # THE CRITICAL FIX: Pull remote changes and rebase our work on top
+            # This prevents the [rejected] main -> main (fetch first) error
+            git pull --rebase origin main
+
+            git push
+          else
+            echo "No changes detected, skipping push."
           fi
-          git rebase --abort || true
-          git reset --hard origin/main
-          git add .
-          git diff --staged --quiet && exit 0
-          git commit -m "Daily update (retry) [$(date +'%Y-%m-%d')]"
-          git push origin main
