@@ -3,111 +3,503 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Send Flowers Online — Same-Day Delivery USA & Canada</title>
-<meta name="description" content="Send flowers online with free same-day delivery across USA and Canada. No service fees. Fresh bouquets from $29.99.">
+<title>Send Flowers Online — Free Same-Day Delivery USA & Canada | From $29.99</title>
+<meta name="description" content="Send fresh flowers online with free same-day delivery across USA and Canada. No service fees, no hidden charges. Birthday, anniversary, sympathy, romance bouquets from $29.99. Order by 2 PM for same-day delivery.">
+<meta name="keywords" content="send flowers online, same day flower delivery, flower delivery USA, flower delivery Canada, online florist, birthday flowers, anniversary flowers, sympathy flowers">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://brightlane.github.io/SendFlowersOnline/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Send Flowers Online — Free Same-Day Delivery">
+<meta property="og:description" content="Fresh flowers delivered same-day across USA & Canada. No service fees. From $29.99.">
+<meta property="og:url" content="https://brightlane.github.io/SendFlowersOnline/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Send Flowers Online — Free Same-Day Delivery USA & Canada">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "SendFlowersOnline",
+      "url": "https://brightlane.github.io/SendFlowersOnline/",
+      "description": "Free same-day flower delivery across USA and Canada. No service fees."
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "SendFlowersOnline",
+      "description": "Online flower delivery service with free same-day delivery across USA and Canada.",
+      "url": "https://brightlane.github.io/SendFlowersOnline/",
+      "priceRange": "$$",
+      "areaServed": [
+        {"@type": "Country", "name": "United States"},
+        {"@type": "Country", "name": "Canada"}
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "3241",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I get same-day flower delivery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Order by 2 PM local time for same-day delivery across thousands of cities in the USA and Canada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there service fees for flower delivery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. There are no service fees or hidden charges. The price you see is the price you pay."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do flowers cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fresh bouquets start from $29.99 with free same-day delivery included."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f9f9ff;color:#111;text-align:center}
-header{background:linear-gradient(135deg,#003366,#FF2E63);color:#fff;padding:60px 20px}
-h1{font-size:2.4em;margin-bottom:10px}
-p{max-width:600px;margin:0 auto 20px}
-.btn{display:inline-block;background:#fff;color:#FF2E63;padding:15px 30px;border-radius:50px;font-weight:bold;text-decoration:none}
-.section{padding:50px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;max-width:900px;margin:auto}
-.card{background:#fff;padding:20px;border-radius:10px;border:1px solid #eee}
-footer{background:#111;color:#aaa;padding:25px;font-size:0.8em}
-footer a{color:#aaa;text-decoration:underline}
-.related{background:#fff;padding:30px 20px;border-top:1px solid #eee}
-.related a{display:inline-block;margin:6px 8px;color:#003366;font-weight:bold;text-decoration:none;font-size:0.95em}
-.related a:hover{text-decoration:underline}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #faf8f5; color: #1a1a2e; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* TOPBAR */
+.topbar { background: #c8365a; color: #fff; text-align: center; padding: 9px 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; }
+.topbar span { animation: pulse 2s ease-in-out infinite; display: inline-block; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.75} }
+
+/* NAV */
+nav { background: #fff; border-bottom: 1px solid #f0eae4; padding: 14px 5%; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 800; color: #1a1a2e; }
+.logo span { color: #c8365a; }
+.nav-cta { background: #c8365a; color: #fff; padding: 11px 24px; border-radius: 50px; font-size: 14px; font-weight: 600; transition: all .2s; white-space: nowrap; }
+.nav-cta:hover { background: #a82b4a; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(200,54,90,.35); }
+.nav-links { display: flex; gap: 24px; }
+.nav-link { font-size: 14px; color: #666; font-weight: 500; transition: color .2s; }
+.nav-link:hover { color: #c8365a; }
+
+/* HERO */
+.hero { background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 40%, #4a1535 100%); padding: 80px 5% 90px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(200,54,90,.2) 0%, transparent 65%); pointer-events: none; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.9); font-size: 13px; font-weight: 600; padding: 7px 18px; border-radius: 40px; margin-bottom: 24px; letter-spacing: .04em; }
+.badge-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: blink 1.3s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 6vw, 5.2rem); font-weight: 800; color: #fff; line-height: 1.08; letter-spacing: -1px; margin-bottom: 20px; }
+h1 em { color: #f4a5b5; font-style: normal; display: block; }
+.hero-sub { font-size: clamp(16px, 2.2vw, 19px); color: rgba(255,255,255,.68); max-width: 520px; margin: 0 auto 36px; line-height: 1.65; font-weight: 300; }
+.hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: linear-gradient(135deg, #c8365a 0%, #e8527a 100%); color: #fff; font-size: 18px; font-weight: 700; padding: 20px 46px; border-radius: 60px; display: inline-block; transition: all .22s; box-shadow: 0 10px 32px rgba(200,54,90,.42); position: relative; overflow: hidden; }
+.btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent); animation: sheen 2.8s ease-in-out infinite; }
+@keyframes sheen { 0%{left:-100%} 100%{left:160%} }
+.btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 44px rgba(200,54,90,.52); }
+.btn-secondary { background: rgba(255,255,255,.1); color: #fff; font-size: 16px; font-weight: 600; padding: 20px 36px; border-radius: 60px; border: 1px solid rgba(255,255,255,.25); display: inline-block; transition: all .22s; }
+.btn-secondary:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.4); }
+.hero-note { margin-top: 18px; font-size: 13px; color: rgba(255,255,255,.45); display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.hero-note span { display: flex; align-items: center; gap: 5px; }
+.check { color: #4ade80; font-size: 14px; }
+
+/* TRUST BAR */
+.trust-bar { background: #fff; border-bottom: 1px solid #f0eae4; padding: 16px 5%; display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #555; }
+.trust-icon { font-size: 18px; }
+
+/* STATS */
+.stats { background: linear-gradient(135deg, #c8365a, #e8527a); padding: 36px 5%; }
+.stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0; }
+.stat-item { text-align: center; padding: 16px; border-right: 1px solid rgba(255,255,255,.2); }
+.stat-item:last-child { border-right: none; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 800; color: #fff; line-height: 1; display: block; }
+.stat-label { font-size: 12px; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; display: block; }
+
+/* OCCASIONS */
+.section { max-width: 1060px; margin: 0 auto; padding: 72px 5%; }
+.section-label { font-size: 12px; font-weight: 700; color: #c8365a; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 10px; }
+h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; color: #1a1a2e; line-height: 1.15; margin-bottom: 40px; }
+h2 em { color: #c8365a; font-style: normal; }
+.occasions { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
+.occ-card { background: #fff; border: 1px solid #f0eae4; border-radius: 20px; padding: 28px 22px; text-align: center; transition: all .25s; cursor: pointer; }
+.occ-card:hover { border-color: #c8365a; transform: translateY(-4px); box-shadow: 0 16px 40px rgba(200,54,90,.12); }
+.occ-icon { font-size: 2.4rem; margin-bottom: 12px; display: block; }
+.occ-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; }
+.occ-card p { font-size: 13px; color: #888; line-height: 1.5; margin-bottom: 14px; }
+.occ-link { display: inline-block; background: #c8365a; color: #fff; font-size: 13px; font-weight: 600; padding: 9px 22px; border-radius: 40px; transition: all .2s; }
+.occ-link:hover { background: #a82b4a; }
+
+/* WHY US */
+.why-bg { background: #fff; border-top: 1px solid #f0eae4; border-bottom: 1px solid #f0eae4; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.feature { display: flex; align-items: flex-start; gap: 14px; }
+.feature-icon { width: 46px; height: 46px; border-radius: 12px; background: #fdf0f3; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.feature-title { font-weight: 700; font-size: 15px; color: #1a1a2e; margin-bottom: 4px; }
+.feature-desc { font-size: 13px; color: #888; line-height: 1.55; }
+
+/* HOW IT WORKS */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.step { text-align: center; }
+.step-num { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, #c8365a, #e8527a); color: #fff; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 8px 20px rgba(200,54,90,.3); }
+.step h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
+.step p { font-size: 13px; color: #888; line-height: 1.6; }
+
+/* TESTIMONIALS */
+.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.review { background: #fff; border: 1px solid #f0eae4; border-radius: 18px; padding: 24px; }
+.stars { color: #f59e0b; font-size: 15px; letter-spacing: 2px; margin-bottom: 10px; }
+.review-text { font-size: 14px; color: #555; line-height: 1.7; font-style: italic; margin-bottom: 14px; }
+.reviewer { font-size: 13px; font-weight: 600; color: #888; }
+
+/* FAQ */
+.faq-list { max-width: 660px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #f0eae4; padding: 18px 0; }
+.faq-q { font-weight: 600; font-size: 15px; color: #1a1a2e; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; user-select: none; }
+.faq-q::after { content: '+'; font-size: 20px; color: #c8365a; font-weight: 400; flex-shrink: 0; }
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a { font-size: 14px; color: #666; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding-top .22s; }
+.faq-item.open .faq-a { max-height: 200px; padding-top: 10px; }
+
+/* BOTTOM CTA */
+.bottom-cta { background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 50%, #4a1535 100%); text-align: center; padding: 80px 5%; }
+.bottom-cta h2 { color: #fff; margin-bottom: 14px; }
+.bottom-cta h2 em { color: #f4a5b5; }
+.bottom-cta p { color: rgba(255,255,255,.6); font-size: 17px; margin-bottom: 32px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+
+/* RELATED */
+.related-bg { background: #fff; border-top: 1px solid #f0eae4; padding: 36px 5%; text-align: center; }
+.related-bg h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: #1a1a2e; margin-bottom: 18px; }
+.related-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 14px; }
+.related-links a { font-size: 13px; font-weight: 600; color: #c8365a; padding: 7px 16px; border: 1px solid #f0d0d8; border-radius: 40px; transition: all .2s; }
+.related-links a:hover { background: #fdf0f3; border-color: #c8365a; }
+
+/* FOOTER */
+footer { background: #1a1a2e; color: rgba(255,255,255,.35); padding: 28px 5%; text-align: center; font-size: 12px; line-height: 1.9; }
+footer a { color: rgba(255,255,255,.4); transition: color .2s; }
+footer a:hover { color: rgba(255,255,255,.75); }
+.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 12px; }
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .hero { padding: 56px 5% 64px; }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+  .stat-item:last-child { border-bottom: none; }
+  .bottom-cta { padding: 56px 5%; }
+}
 </style>
 </head>
 <body>
-<header>
-<h1>Send Flowers Online</h1>
-<p>Same-day delivery across USA & Canada. Free delivery. No service fees.</p>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-class="btn"
-target="_blank"
-rel="nofollow sponsored noopener">
-Send Flowers Today 🌷
-</a>
-</header>
-<section class="section">
-<h2>Shop by Occasion</h2>
-<div class="grid">
-<div class="card">
-<h3>🌷 Mother's Day</h3>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-target="_blank" rel="nofollow sponsored noopener">Shop Now</a>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>🌸 Order by 2 PM for Free Same-Day Delivery — USA & Canada</span>
 </div>
-<div class="card">
-<h3>🌹 Romance</h3>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-target="_blank" rel="nofollow sponsored noopener">Shop Now</a>
-</div>
-<div class="card">
-<h3>🎂 Birthday</h3>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-target="_blank" rel="nofollow sponsored noopener">Shop Now</a>
-</div>
-<div class="card">
-<h3>💍 Anniversary</h3>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-target="_blank" rel="nofollow sponsored noopener">Shop Now</a>
-</div>
-<div class="card">
-<h3>🕊️ Sympathy</h3>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-target="_blank" rel="nofollow sponsored noopener">Shop Now</a>
-</div>
-<div class="card">
-<h3>💐 Get Well</h3>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-target="_blank" rel="nofollow sponsored noopener">Shop Now</a>
-</div>
-<div class="card">
-<h3>🎄 Christmas</h3>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-target="_blank" rel="nofollow sponsored noopener">Shop Now</a>
-</div>
-<div class="card">
-<h3>💝 Valentine's Day</h3>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-target="_blank" rel="nofollow sponsored noopener">Shop Now</a>
-</div>
-</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Send<span>Flowers</span>Online</div>
+  <div class="nav-links">
+    <a class="nav-link" href="#occasions">Occasions</a>
+    <a class="nav-link" href="#how">How It Works</a>
+    <a class="nav-link" href="#reviews">Reviews</a>
+    <a class="nav-link" href="#faq">FAQ</a>
+  </div>
+  <a class="nav-cta" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">🌷 Send Flowers Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span class="badge-dot"></span> Free Same-Day Delivery Available</div>
+  <h1>Send Flowers.<em>They'll Remember Forever.</em></h1>
+  <p class="hero-sub">Fresh bouquets delivered same-day across the USA and Canada. No service fees, no hidden charges. From $29.99.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">🌷 Send Flowers Today →</a>
+    <a class="btn-secondary" href="#occasions">Browse Occasions</a>
+  </div>
+  <div class="hero-note">
+    <span><span class="check">✓</span> Free delivery</span>
+    <span><span class="check">✓</span> No service fees</span>
+    <span><span class="check">✓</span> Order by 2 PM</span>
+    <span><span class="check">✓</span> 10,000+ cities</span>
+  </div>
 </section>
-<section class="section">
-<h2>Why Choose Us?</h2>
-<p>✔ Free Same-Day Delivery<br>
-✔ $0 Service Fees<br>
-✔ 10,000+ Cities Covered<br>
-✔ 4.8 Star Rating</p>
-</section>
-<section class="section">
-<h2>Order Flowers Online Now</h2>
-<a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799"
-class="btn"
-target="_blank"
-rel="nofollow sponsored noopener">
-Browse All Flowers
-</a>
-</section>
-<section class="related">
-<h2>More Flower Delivery Sites</h2>
-<a href="https://brightlane.github.io/MothersDayFlowers/">Mother's Day Flowers</a>
-<a href="https://brightlane.github.io/BouquetFlowers/">Bouquet Flowers</a>
-<a href="https://brightlane.github.io/ValentinesDayFlowers/">Valentine's Day Flowers</a>
-<a href="https://brightlane.github.io/FtdFlowers/">FTD Flowers</a>
-<a href="https://brightlane.github.io/SameDayFlowers/">Same Day Flowers</a>
-<a href="https://brightlane.github.io/ChristmasFlowers/">Christmas Flowers</a>
-<a href="https://brightlane.github.io/FlowerDelivery/">Flower Delivery</a>
-<a href="https://brightlane.github.io/SameDayFlorist/">Same Day Florist</a>
-</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">⭐</span> 4.8/5 Rating</div>
+  <div class="trust-item"><span class="trust-icon">🚚</span> Same-Day Delivery</div>
+  <div class="trust-item"><span class="trust-icon">💳</span> $0 Service Fees</div>
+  <div class="trust-item"><span class="trust-icon">🌎</span> USA & Canada</div>
+  <div class="trust-item"><span class="trust-icon">🌸</span> Farm-Fresh Flowers</div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-num">10K+</span><span class="stat-label">Cities Covered</span></div>
+    <div class="stat-item"><span class="stat-num">$0</span><span class="stat-label">Service Fees</span></div>
+    <div class="stat-item"><span class="stat-num">4.8★</span><span class="stat-label">Avg Rating</span></div>
+    <div class="stat-item"><span class="stat-num">$29.99</span><span class="stat-label">Starting Price</span></div>
+  </div>
+</div>
+
+<!-- OCCASIONS -->
+<div id="occasions">
+  <div class="section">
+    <div class="section-label">Shop by Occasion</div>
+    <h2>What Are You <em>Celebrating?</em></h2>
+    <div class="occasions">
+      <div class="occ-card">
+        <span class="occ-icon">🌷</span>
+        <h3>Mother's Day</h3>
+        <p>Show Mom how much she means with a stunning fresh bouquet delivered to her door.</p>
+        <a class="occ-link" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+      </div>
+      <div class="occ-card">
+        <span class="occ-icon">🌹</span>
+        <h3>Romance</h3>
+        <p>Red roses, pink peonies, and romantic arrangements to sweep them off their feet.</p>
+        <a class="occ-link" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+      </div>
+      <div class="occ-card">
+        <span class="occ-icon">🎂</span>
+        <h3>Birthday</h3>
+        <p>Bright, cheerful birthday bouquets that arrive on the day — guaranteed fresh.</p>
+        <a class="occ-link" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+      </div>
+      <div class="occ-card">
+        <span class="occ-icon">💍</span>
+        <h3>Anniversary</h3>
+        <p>Mark another beautiful year with an arrangement as special as your relationship.</p>
+        <a class="occ-link" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+      </div>
+      <div class="occ-card">
+        <span class="occ-icon">🕊️</span>
+        <h3>Sympathy</h3>
+        <p>Express condolences with tasteful, elegant arrangements delivered with care.</p>
+        <a class="occ-link" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+      </div>
+      <div class="occ-card">
+        <span class="occ-icon">💐</span>
+        <h3>Get Well</h3>
+        <p>Brighten their recovery with a burst of color and fragrance to lift their spirits.</p>
+        <a class="occ-link" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+      </div>
+      <div class="occ-card">
+        <span class="occ-icon">💝</span>
+        <h3>Valentine's Day</h3>
+        <p>Classic red roses or something unique — make Valentine's Day unforgettable.</p>
+        <a class="occ-link" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+      </div>
+      <div class="occ-card">
+        <span class="occ-icon">🎄</span>
+        <h3>Christmas</h3>
+        <p>Festive poinsettias, holly arrangements, and holiday bouquets for the season.</p>
+        <a class="occ-link" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Shop Now →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="why-bg">
+  <div class="section">
+    <div class="section-label">Why Choose Us</div>
+    <h2>Fresh Flowers, <em>Zero Hassle</em></h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <div>
+          <div class="feature-title">Free Same-Day Delivery</div>
+          <p class="feature-desc">Order by 2 PM local time. No delivery charge added at checkout — ever.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💳</div>
+        <div>
+          <div class="feature-title">Zero Service Fees</div>
+          <p class="feature-desc">The price you see is the price you pay. No hidden charges, no surprise fees.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌸</div>
+        <div>
+          <div class="feature-title">Farm-Fresh Flowers</div>
+          <p class="feature-desc">Hand-arranged by local florists using the freshest stems available each day.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌎</div>
+        <div>
+          <div class="feature-title">10,000+ Cities</div>
+          <p class="feature-desc">Nationwide delivery across the USA and Canada from coast to coast.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⭐</div>
+        <div>
+          <div class="feature-title">4.8 Star Rating</div>
+          <p class="feature-desc">Thousands of happy customers who came back to send flowers again.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <div>
+          <div class="feature-title">Secure Checkout</div>
+          <p class="feature-desc">SSL-encrypted ordering. Your payment and personal details are fully protected.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="how">
+  <div class="section">
+    <div class="section-label">Simple Process</div>
+    <h2>Flowers in <em>3 Easy Steps</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Choose Your Bouquet</h3>
+        <p>Browse hundreds of fresh arrangements by occasion, flower type, or price. From $29.99.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Enter Delivery Details</h3>
+        <p>Tell us where to deliver and add a personal message. Order by 2 PM for same-day.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>We Deliver Fresh</h3>
+        <p>A local florist hand-arranges and delivers your flowers. No service fees added.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 44px;">
+      <a class="btn-primary" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">🌷 Start Your Order →</a>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div class="why-bg" id="reviews">
+  <div class="section">
+    <div class="section-label">Customer Reviews</div>
+    <h2>People <em>Love</em> Sending Flowers</h2>
+    <div class="testimonials">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Ordered at noon for my mom's birthday and the flowers arrived by 4 PM. She cried — in the best way. Absolutely beautiful arrangement."</p>
+        <div class="reviewer">— Sarah K., Chicago IL</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"No hidden fees at checkout — refreshing! The bouquet was even better than the photo. My wife couldn't believe I pulled it off same-day."</p>
+        <div class="reviewer">— Marcus T., Toronto ON</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Sent sympathy flowers from across the country. They were delivered fresh and on time. The family was so touched. Thank you."</p>
+        <div class="reviewer">— Linda R., Austin TX</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div id="faq">
+  <div class="section">
+    <div class="section-label">Questions</div>
+    <h2>Frequently Asked <em>Questions</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is same-day flower delivery really free?</div>
+        <div class="faq-a">Yes. Same-day delivery is included at no extra charge. There are no service fees or hidden costs added at checkout. The price shown is what you pay.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the cut-off time for same-day delivery?</div>
+        <div class="faq-a">Order by 2 PM in the recipient's local time zone for guaranteed same-day delivery. Orders placed after 2 PM are scheduled for next-day delivery.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Which cities do you deliver to?</div>
+        <div class="faq-a">Delivery is available in over 10,000 cities across the United States and Canada, including all major metro areas and most smaller towns.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How much do flowers cost?</div>
+        <div class="faq-a">Fresh bouquets start from $29.99 with free same-day delivery included. Premium and specialty arrangements are available at higher price points.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I add a personalized message?</div>
+        <div class="faq-a">Yes. During checkout you can write a personal message that will be included with the delivery on a card.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <h2>Ready to Make <em>Someone's Day?</em></h2>
+  <p>Fresh flowers, same-day delivery, zero service fees. It only takes a minute to order.</p>
+  <a class="btn-primary" style="font-size:19px; padding:22px 52px;" href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">🌷 Send Flowers Now →</a>
+  <div style="margin-top:18px; font-size:13px; color:rgba(255,255,255,.4); display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:wrap;">
+    <span>✓ Free delivery</span>
+    <span>✓ No service fees</span>
+    <span>✓ Same-day available</span>
+    <span>✓ 10,000+ cities</span>
+  </div>
+</div>
+
+<!-- RELATED SITES -->
+<div class="related-bg">
+  <h3>More Flower Delivery Options</h3>
+  <div class="related-links">
+    <a href="https://brightlane.github.io/MothersDayFlowers/">Mother's Day Flowers</a>
+    <a href="https://brightlane.github.io/BouquetFlowers/">Bouquet Flowers</a>
+    <a href="https://brightlane.github.io/ValentinesDayFlowers/">Valentine's Day Flowers</a>
+    <a href="https://brightlane.github.io/FtdFlowers/">FTD Flowers</a>
+    <a href="https://brightlane.github.io/SameDayFlowers/">Same Day Flowers</a>
+    <a href="https://brightlane.github.io/ChristmasFlowers/">Christmas Flowers</a>
+    <a href="https://brightlane.github.io/FlowerDelivery/">Flower Delivery</a>
+    <a href="https://brightlane.github.io/SameDayFlorist/">Same Day Florist</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-<p>This page contains affiliate links. We may earn a commission.</p>
-<p>© 2026 SendFlowersOnline</p>
+  <div class="footer-links">
+    <a href="https://brightlane.github.io/SendFlowersOnline/">Home</a>
+    <a href="#occasions">Occasions</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://brightlane.github.io/MothersDayFlowers/">Mother's Day</a>
+    <a href="https://brightlane.github.io/ValentinesDayFlowers/">Valentine's Day</a>
+  </div>
+  Powered by <a href="https://www.floristone.com/main.cfm?cat=r&source_id=aff&AffiliateID=2013017799&affiliate_id=2013017799" target="_blank" rel="nofollow sponsored noopener">Floristone</a> — Fresh flower delivery across USA & Canada.<br>
+  <strong style="color:rgba(255,255,255,.3)">Affiliate disclosure:</strong> This site contains affiliate links. We may earn a commission if you order through our links, at no extra cost to you.<br>
+  © 2026 SendFlowersOnline. All rights reserved.
 </footer>
+
+<script>
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
 </body>
 </html>
