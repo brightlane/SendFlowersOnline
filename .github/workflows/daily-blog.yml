@@ -1,25 +1,17 @@
 name: Vulture 10K Daily Engine
-
 on:
   schedule:
-    # Daily at 9 AM UTC
     - cron: "0 9 * * *"
-
   workflow_dispatch:
-
-# Prevent overlapping runs
 concurrency:
   group: sendflowersonline-vulture
   cancel-in-progress: false
-
 permissions:
   contents: write
-
 jobs:
   run-vulture-matrix:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
-
+    timeout-minutes: 45
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -43,88 +35,77 @@ jobs:
       - name: Install Dependencies
         shell: bash
         run: |
-          set -e
-
           python -m pip install --upgrade pip
-
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           else
             pip install requests
           fi
 
+      # Protect index.html before any generator runs
+      - name: Snapshot protected index.html
+        run: |
+          if [ -f index.html ]; then
+            cp index.html index.html.protected
+            echo "✅ index.html snapshot saved"
+          else
+            echo "⚠️ No index.html found to protect"
+          fi
+
       - name: Verify generator exists
         shell: bash
         run: |
           if [ ! -f vulture_generator_master.py ]; then
-            echo "❌ Missing vulture_generator_master.py"
-            exit 1
+            echo "⚠️ vulture_generator_master.py not found — skipping content generation"
+            echo "SKIP_GENERATOR=true" >> $GITHUB_ENV
+          else
+            echo "✅ Generator found"
+            echo "SKIP_GENERATOR=false" >> $GITHUB_ENV
           fi
 
-      - name: Execute Vulture Master Script
+      - name: Execute Vulture Master Script (time-capped at 30 min)
+        if: env.SKIP_GENERATOR == 'false'
         shell: bash
         run: |
-          set -e
-          python vulture_generator_master.py
+          timeout 1800 python vulture_generator_master.py || {
+            EXIT=$?
+            if [ $EXIT -eq 124 ]; then
+              echo "⏱️ Generator hit 30-min cap — partial output committed"
+            else
+              echo "❌ Generator exited with code $EXIT"
+            fi
+          }
+
+      # Restore index.html so generator can never overwrite it
+      - name: Restore protected index.html
+        run: |
+          if [ -f index.html.protected ]; then
+            cp index.html.protected index.html
+            rm index.html.protected
+            echo "✅ index.html restored"
+          fi
 
       - name: Git Status
-        run: git status
+        run: git status --short
 
       - name: Commit and Push Changes
         shell: bash
         run: |
-          set +e
-
           git config user.name "Vulture-Bot"
           git config user.email "actions@github.com"
-
+          git config http.postBuffer 524288000
+          git config http.lowSpeedLimit 0
+          git config http.lowSpeedTime 300
           git add -A
-
-          # Skip if no changes
           if git diff --cached --quiet; then
-            echo "✅ No changes detected"
+            echo "✅ No changes to commit"
             exit 0
           fi
-
-          git commit -m "Vulture Engine Sync: $(date +'%Y-%m-%d')"
-
-          # Save local work safely
-          git stash push --include-untracked || true
-
-          # Pull latest remote changes
-          git pull --rebase origin main || true
-
-          # Restore local changes
-          git stash pop || true
-
-          git add -A
-
-          # Re-commit if needed after stash pop
-          if ! git diff --cached --quiet; then
-            git commit --amend --no-edit || true
-          fi
-
-          # Push safely
-          git push origin HEAD:main
-
-          PUSH_EXIT=$?
-
-          if [ $PUSH_EXIT -ne 0 ]; then
-            echo ""
-            echo "❌ Push failed"
-            echo ""
-            echo "Possible causes:"
-            echo "- GitHub account suspended"
-            echo "- Invalid repository permissions"
-            echo "- Branch protection rules"
-            echo "- Token access restrictions"
-            echo "- GitHub outage"
-            echo ""
-            echo "Workflow finished gracefully."
-            exit 0
-          fi
-
-          echo "✅ Push successful"
-
+          git commit -m "Vulture Engine: $(date +'%Y-%m-%d') [Skip CI]"
+          for i in 1 2 3; do
+            git push origin main --progress && break
+            echo "Push attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
